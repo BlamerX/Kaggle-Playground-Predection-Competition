@@ -1,0 +1,712 @@
+Time    #   Log Message
+9.7s	0	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	1	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	2	0.00s - to python to disable frozen modules.
+9.7s	3	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	4	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	5	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	6	0.00s - to python to disable frozen modules.
+10.4s	7	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+18.1s	8	/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/query.py:195: SyntaxWarning: "is not" with 'tuple' literal. Did you mean "!="?
+18.1s	9	  if entities is not ():
+18.1s	10	
+18.1s	11	/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/query.py:195: SyntaxWarning: "is not" with 'tuple' literal. Did you mean "!="?
+18.1s	12	  if entities is not ():
+21.8s	13	======================================================================
+21.8s	14	S6E1 V6 - Optuna (FIXED - No Pruning, Focused Search)
+21.8s	15	======================================================================
+21.8s	16	Trials: 500 | Timeout: 7.5hrs | CV Folds: 2
+21.8s	17	Fixes: Removed pruning, narrowed search space based on best trials
+21.8s	18	
+21.8s	19	--- Loading Pre-encoded Parquet Files ---
+24.8s	20	X_train: (630000, 147), X_test: (270000, 147)
+24.8s	21	
+24.8s	22	Baseline from Trial 1: RMSE 8.69340
+24.8s	23	  learning_rate: 0.022, num_leaves: 64, max_depth: 10
+24.8s	24	
+24.8s	25	--- Starting Optuna Optimization (No Pruning) ---
+29.1s	26	1 warning generated.
+29.3s	27	1 warning generated.
+29.3s	28	
+29.3s	29	1 warning generated.
+29.3s	30	1 warning generated.
+29.5s	31	1 warning generated.
+29.5s	32	1 warning generated.
+29.5s	33	1 warning generated.
+29.5s	34	
+29.5s	35	1 warning generated.
+29.5s	36	1 warning generated.
+29.6s	37	1 warning generated.
+29.8s	38	1 warning generated.
+29.8s	39	
+29.8s	40	1 warning generated.
+29.8s	41	1 warning generated.
+29.9s	42	1 warning generated.
+30.0s	43	1 warning generated.
+30.0s	44	1 warning generated.
+30.0s	45	
+30.0s	46	1 warning generated.
+30.0s	47	1 warning generated.
+30.0s	48	1 warning generated.
+30.2s	49	1 warning generated.
+30.2s	50	1 warning generated.
+30.2s	51	1 warning generated.
+30.2s	52	
+30.2s	53	1 warning generated.
+30.2s	54	1 warning generated.
+30.3s	55	1 warning generated.
+30.4s	56	1 warning generated.
+30.5s	57	1 warning generated.
+30.5s	58	1 warning generated.
+30.5s	59	
+30.5s	60	1 warning generated.
+30.5s	61	1 warning generated.
+30.5s	62	1 warning generated.
+30.7s	63	1 warning generated.
+30.7s	64	1 warning generated.
+30.7s	65	1 warning generated.
+30.7s	66	
+30.7s	67	1 warning generated.
+30.7s	68	1 warning generated.
+30.8s	69	1 warning generated.
+30.9s	70	1 warning generated.
+31.0s	71	1 warning generated.
+31.0s	72	1 warning generated.
+31.0s	73	
+31.0s	74	1 warning generated.
+31.0s	75	1 warning generated.
+31.1s	76	1 warning generated.
+31.2s	77	1 warning generated.
+31.3s	78	1 warning generated.
+31.3s	79	1 warning generated.
+31.3s	80	
+31.3s	81	1 warning generated.
+31.3s	82	1 warning generated.
+31.3s	83	1 warning generated.
+31.5s	84	1 warning generated.
+31.5s	85	1 warning generated.
+31.5s	86	1 warning generated.
+31.5s	87	
+31.5s	88	1 warning generated.
+31.5s	89	1 warning generated.
+31.6s	90	1 warning generated.
+31.7s	91	1 warning generated.
+31.8s	92	1 warning generated.
+31.8s	93	1 warning generated.
+31.8s	94	
+31.8s	95	1 warning generated.
+31.8s	96	1 warning generated.
+31.8s	97	1 warning generated.
+32.0s	98	1 warning generated.
+32.0s	99	1 warning generated.
+32.0s	100	1 warning generated.
+32.0s	101	
+32.0s	102	1 warning generated.
+32.0s	103	1 warning generated.
+32.1s	104	1 warning generated.
+32.2s	105	1 warning generated.
+32.3s	106	1 warning generated.
+32.3s	107	1 warning generated.
+32.3s	108	
+32.3s	109	1 warning generated.
+32.3s	110	1 warning generated.
+32.4s	111	1 warning generated.
+32.5s	112	1 warning generated.
+32.6s	113	1 warning generated.
+32.6s	114	1 warning generated.
+32.6s	115	
+32.6s	116	1 warning generated.
+32.6s	117	1 warning generated.
+32.7s	118	1 warning generated.
+32.8s	119	1 warning generated.
+32.9s	120	1 warning generated.
+32.9s	121	1 warning generated.
+32.9s	122	
+32.9s	123	1 warning generated.
+32.9s	124	1 warning generated.
+32.9s	125	1 warning generated.
+33.1s	126	1 warning generated.
+33.1s	127	1 warning generated.
+33.1s	128	1 warning generated.
+33.1s	129	
+33.1s	130	1 warning generated.
+33.1s	131	1 warning generated.
+33.2s	132	1 warning generated.
+33.3s	133	1 warning generated.
+33.4s	134	1 warning generated.
+33.4s	135	1 warning generated.
+33.4s	136	
+33.4s	137	1 warning generated.
+33.4s	138	1 warning generated.
+33.5s	139	1 warning generated.
+33.7s	140	1 warning generated.
+33.7s	141	
+33.7s	142	1 warning generated.
+104.1s	143	
+104.1s	144	🏆 TRIAL 0 | RMSE: 8.70365 | Best: 8.70365
+104.1s	145	NEW BEST PARAMS:
+104.1s	146	  learning_rate: 0.039345
+104.1s	147	  num_leaves: 97
+104.1s	148	  max_depth: 9
+104.1s	149	  min_child_samples: 56
+104.1s	150	  subsample: 0.739005
+104.1s	151	  colsample_bytree: 0.554598
+104.1s	152	  reg_alpha: 0.139277
+104.1s	153	  reg_lambda: 0.396761
+170.0s	154	
+170.0s	155	TRIAL 1 | RMSE: 8.70902 | Best: 8.70365
+266.7s	156	
+266.7s	157	🏆 TRIAL 2 | RMSE: 8.70148 | Best: 8.70148
+266.7s	158	NEW BEST PARAMS:
+266.7s	159	  learning_rate: 0.034776
+266.7s	160	  num_leaves: 67
+266.7s	161	  max_depth: 7
+266.7s	162	  min_child_samples: 37
+266.7s	163	  subsample: 0.852963
+266.7s	164	  colsample_bytree: 0.548823
+266.7s	165	  reg_alpha: 0.529271
+266.7s	166	  reg_lambda: 0.012563
+349.7s	167	
+349.7s	168	TRIAL 3 | RMSE: 8.70298 | Best: 8.70148
+503.0s	169	
+503.0s	170	🏆 TRIAL 4 | RMSE: 8.69643 | Best: 8.69643
+503.0s	171	NEW BEST PARAMS:
+503.0s	172	  learning_rate: 0.019228
+503.0s	173	  num_leaves: 97
+503.0s	174	  max_depth: 10
+503.0s	175	  min_child_samples: 69
+503.0s	176	  subsample: 0.776153
+503.0s	177	  colsample_bytree: 0.534185
+503.0s	178	  reg_alpha: 4.953683
+503.0s	179	  reg_lambda: 0.020915
+654.9s	180	
+654.9s	181	TRIAL 5 | RMSE: 8.70405 | Best: 8.69643
+713.4s	182	
+713.4s	183	TRIAL 6 | RMSE: 8.71614 | Best: 8.69643
+882.8s	184	
+882.8s	185	TRIAL 7 | RMSE: 8.69962 | Best: 8.69643
+991.1s	186	
+991.1s	187	TRIAL 8 | RMSE: 8.70749 | Best: 8.69643
+1153.5s	188	
+1153.5s	189	🏆 TRIAL 9 | RMSE: 8.69570 | Best: 8.69570
+1153.5s	190	NEW BEST PARAMS:
+1153.5s	191	  learning_rate: 0.015359
+1153.5s	192	  num_leaves: 88
+1153.5s	193	  max_depth: 9
+1153.5s	194	  min_child_samples: 64
+1153.5s	195	  subsample: 0.892818
+1153.5s	196	  colsample_bytree: 0.525916
+1153.5s	197	  reg_alpha: 0.772615
+1153.5s	198	  reg_lambda: 0.002226
+1202.6s	199	
+1202.6s	200	TRIAL 10 | RMSE: 8.71817 | Best: 8.69570
+1352.5s	201	
+1352.5s	202	TRIAL 11 | RMSE: 8.69798 | Best: 8.69570
+1542.8s	203	
+1542.8s	204	🏆 TRIAL 12 | RMSE: 8.69386 | Best: 8.69386
+1542.8s	205	NEW BEST PARAMS:
+1542.8s	206	  learning_rate: 0.015704
+1542.8s	207	  num_leaves: 86
+1542.8s	208	  max_depth: 9
+1542.8s	209	  min_child_samples: 67
+1542.8s	210	  subsample: 0.875238
+1542.8s	211	  colsample_bytree: 0.502990
+1542.8s	212	  reg_alpha: 1.562693
+1542.8s	213	  reg_lambda: 0.143747
+1644.3s	214	
+1644.3s	215	TRIAL 13 | RMSE: 8.69875 | Best: 8.69386
+1689.0s	216	
+1689.0s	217	TRIAL 14 | RMSE: 8.71441 | Best: 8.69386
+1791.7s	218	
+1791.7s	219	TRIAL 15 | RMSE: 8.70305 | Best: 8.69386
+1845.7s	220	
+1845.7s	221	TRIAL 16 | RMSE: 8.71099 | Best: 8.69386
+2039.6s	222	
+2039.6s	223	TRIAL 17 | RMSE: 8.69756 | Best: 8.69386
+2104.5s	224	
+2104.5s	225	TRIAL 18 | RMSE: 8.70940 | Best: 8.69386
+2141.1s	226	
+2141.1s	227	TRIAL 19 | RMSE: 8.72342 | Best: 8.69386
+2260.2s	228	
+2260.2s	229	TRIAL 20 | RMSE: 8.69736 | Best: 8.69386
+2426.3s	230	
+2426.3s	231	TRIAL 21 | RMSE: 8.69575 | Best: 8.69386
+2626.2s	232	
+2626.2s	233	TRIAL 22 | RMSE: 8.69471 | Best: 8.69386
+2753.1s	234	
+2753.1s	235	TRIAL 23 | RMSE: 8.69671 | Best: 8.69386
+2846.9s	236	
+2846.9s	237	TRIAL 24 | RMSE: 8.70186 | Best: 8.69386
+2949.6s	238	
+2949.6s	239	TRIAL 25 | RMSE: 8.70033 | Best: 8.69386
+3075.8s	240	
+3075.8s	241	TRIAL 26 | RMSE: 8.69884 | Best: 8.69386
+3247.1s	242	
+3247.1s	243	TRIAL 27 | RMSE: 8.69641 | Best: 8.69386
+3295.6s	244	
+3295.6s	245	TRIAL 28 | RMSE: 8.71094 | Best: 8.69386
+3370.4s	247	
+3370.4s	248	TRIAL 29 | RMSE: 8.70462 | Best: 8.69386
+3443.7s	249	
+3443.7s	250	TRIAL 30 | RMSE: 8.70402 | Best: 8.69386
+3597.0s	251	
+3597.0s	252	TRIAL 31 | RMSE: 8.69533 | Best: 8.69386
+3760.6s	253	
+3760.6s	254	TRIAL 32 | RMSE: 8.69528 | Best: 8.69386
+3906.1s	255	
+3906.1s	256	TRIAL 33 | RMSE: 8.69704 | Best: 8.69386
+4024.2s	257	
+4024.2s	258	TRIAL 34 | RMSE: 8.69850 | Best: 8.69386
+4168.2s	259	
+4168.2s	260	TRIAL 35 | RMSE: 8.69478 | Best: 8.69386
+4279.0s	261	
+4279.0s	262	TRIAL 36 | RMSE: 8.69870 | Best: 8.69386
+4409.9s	263	
+4409.9s	264	TRIAL 37 | RMSE: 8.69731 | Best: 8.69386
+4561.6s	265	
+4561.6s	266	TRIAL 38 | RMSE: 8.69583 | Best: 8.69386
+4622.6s	267	
+4622.6s	268	TRIAL 39 | RMSE: 8.70627 | Best: 8.69386
+4777.7s	269	
+4777.7s	270	TRIAL 40 | RMSE: 8.69628 | Best: 8.69386
+4943.3s	271	
+4943.3s	272	TRIAL 41 | RMSE: 8.69591 | Best: 8.69386
+5074.3s	273	
+5074.3s	274	TRIAL 42 | RMSE: 8.69684 | Best: 8.69386
+5194.4s	275	
+5194.4s	276	TRIAL 43 | RMSE: 8.69690 | Best: 8.69386
+5361.1s	277	
+5361.1s	278	TRIAL 44 | RMSE: 8.69590 | Best: 8.69386
+5523.3s	279	
+5523.3s	280	TRIAL 45 | RMSE: 8.69619 | Best: 8.69386
+5608.7s	281	
+5608.7s	282	TRIAL 46 | RMSE: 8.70292 | Best: 8.69386
+5701.7s	283	
+5701.7s	284	TRIAL 47 | RMSE: 8.70549 | Best: 8.69386
+5828.2s	285	
+5828.2s	286	TRIAL 48 | RMSE: 8.70055 | Best: 8.69386
+5898.2s	287	
+5898.2s	288	TRIAL 49 | RMSE: 8.70436 | Best: 8.69386
+6017.5s	289	
+6017.5s	290	TRIAL 50 | RMSE: 8.69790 | Best: 8.69386
+6200.3s	291	
+6200.3s	292	TRIAL 51 | RMSE: 8.69462 | Best: 8.69386
+6353.3s	293	
+6353.3s	294	TRIAL 52 | RMSE: 8.69629 | Best: 8.69386
+6555.7s	295	
+6555.7s	296	🏆 TRIAL 53 | RMSE: 8.69370 | Best: 8.69370
+6555.7s	297	NEW BEST PARAMS:
+6555.7s	298	  learning_rate: 0.015391
+6555.7s	299	  num_leaves: 94
+6555.7s	300	  max_depth: 9
+6555.7s	301	  min_child_samples: 61
+6555.7s	302	  subsample: 0.877482
+6555.7s	303	  colsample_bytree: 0.515340
+6555.7s	304	  reg_alpha: 1.242951
+6555.7s	305	  reg_lambda: 0.010790
+6751.9s	306	
+6751.9s	307	🏆 TRIAL 54 | RMSE: 8.69356 | Best: 8.69356
+6751.9s	308	NEW BEST PARAMS:
+6751.9s	309	  learning_rate: 0.015438
+6751.9s	310	  num_leaves: 86
+6751.9s	311	  max_depth: 8
+6751.9s	312	  min_child_samples: 55
+6751.9s	313	  subsample: 0.855509
+6751.9s	314	  colsample_bytree: 0.500330
+6751.9s	315	  reg_alpha: 1.344573
+6751.9s	316	  reg_lambda: 0.004911
+6955.3s	317	
+6955.3s	318	TRIAL 55 | RMSE: 8.69441 | Best: 8.69356
+7146.3s	319	
+7146.3s	320	TRIAL 56 | RMSE: 8.69833 | Best: 8.69356
+7334.3s	321	
+7334.3s	322	TRIAL 57 | RMSE: 8.69532 | Best: 8.69356
+7476.9s	323	
+7476.9s	324	TRIAL 58 | RMSE: 8.69575 | Best: 8.69356
+7652.6s	325	
+7652.6s	326	TRIAL 59 | RMSE: 8.69502 | Best: 8.69356
+7772.6s	327	
+7772.6s	328	TRIAL 60 | RMSE: 8.70150 | Best: 8.69356
+7973.2s	329	
+7973.2s	330	TRIAL 61 | RMSE: 8.69388 | Best: 8.69356
+8189.3s	331	
+8189.3s	332	TRIAL 62 | RMSE: 8.69418 | Best: 8.69356
+8406.0s	333	
+8406.0s	334	TRIAL 63 | RMSE: 8.69428 | Best: 8.69356
+8552.2s	335	
+8552.2s	336	TRIAL 64 | RMSE: 8.69606 | Best: 8.69356
+8738.3s	337	
+8738.3s	338	TRIAL 65 | RMSE: 8.69495 | Best: 8.69356
+8794.0s	339	
+8794.0s	340	TRIAL 66 | RMSE: 8.71308 | Best: 8.69356
+8915.1s	341	
+8915.1s	342	TRIAL 67 | RMSE: 8.69871 | Best: 8.69356
+8964.3s	343	
+8964.3s	344	TRIAL 68 | RMSE: 8.71286 | Best: 8.69356
+9137.9s	345	
+9137.9s	346	TRIAL 69 | RMSE: 8.69516 | Best: 8.69356
+9282.1s	347	
+9282.1s	348	TRIAL 70 | RMSE: 8.69575 | Best: 8.69356
+9485.3s	349	
+9485.3s	350	TRIAL 71 | RMSE: 8.69376 | Best: 8.69356
+9654.1s	351	
+9654.1s	352	TRIAL 72 | RMSE: 8.69544 | Best: 8.69356
+9865.8s	353	
+9865.8s	354	TRIAL 73 | RMSE: 8.69384 | Best: 8.69356
+10018.9s	355	
+10018.9s	356	TRIAL 74 | RMSE: 8.69537 | Best: 8.69356
+10202.0s	357	
+10202.0s	358	TRIAL 75 | RMSE: 8.69463 | Best: 8.69356
+10242.6s	359	
+10242.6s	360	TRIAL 76 | RMSE: 8.71719 | Best: 8.69356
+10381.4s	361	
+10381.4s	362	TRIAL 77 | RMSE: 8.69636 | Best: 8.69356
+10537.8s	363	
+10537.8s	364	TRIAL 78 | RMSE: 8.69546 | Best: 8.69356
+10688.7s	365	
+10688.7s	366	TRIAL 79 | RMSE: 8.69626 | Best: 8.69356
+10864.0s	367	
+10864.0s	368	TRIAL 80 | RMSE: 8.69621 | Best: 8.69356
+11058.4s	369	
+11058.4s	370	TRIAL 81 | RMSE: 8.69508 | Best: 8.69356
+11257.4s	371	
+11257.4s	372	TRIAL 82 | RMSE: 8.69403 | Best: 8.69356
+11452.4s	373	
+11452.4s	374	TRIAL 83 | RMSE: 8.69425 | Best: 8.69356
+11622.7s	375	
+11622.7s	376	TRIAL 84 | RMSE: 8.69542 | Best: 8.69356
+11788.2s	377	
+11788.2s	378	TRIAL 85 | RMSE: 8.69548 | Best: 8.69356
+11968.3s	379	
+11968.3s	380	TRIAL 86 | RMSE: 8.69488 | Best: 8.69356
+12104.6s	381	
+12104.6s	382	TRIAL 87 | RMSE: 8.69788 | Best: 8.69356
+12266.1s	383	
+12266.1s	384	TRIAL 88 | RMSE: 8.69518 | Best: 8.69356
+12423.8s	385	
+12423.8s	386	TRIAL 89 | RMSE: 8.69627 | Best: 8.69356
+12543.0s	387	
+12543.0s	388	TRIAL 90 | RMSE: 8.69878 | Best: 8.69356
+12728.6s	389	
+12728.6s	390	TRIAL 91 | RMSE: 8.69526 | Best: 8.69356
+12811.0s	391	
+12811.0s	392	TRIAL 92 | RMSE: 8.70165 | Best: 8.69356
+12976.3s	393	
+12976.3s	394	TRIAL 93 | RMSE: 8.69704 | Best: 8.69356
+13129.6s	395	
+13129.6s	396	TRIAL 94 | RMSE: 8.69496 | Best: 8.69356
+13293.1s	397	
+13293.1s	398	TRIAL 95 | RMSE: 8.69567 | Best: 8.69356
+13452.0s	399	
+13452.0s	400	TRIAL 96 | RMSE: 8.69578 | Best: 8.69356
+13648.7s	401	
+13648.7s	402	TRIAL 97 | RMSE: 8.69399 | Best: 8.69356
+13777.4s	403	
+13777.4s	404	TRIAL 98 | RMSE: 8.69976 | Best: 8.69356
+13955.8s	405	
+13955.8s	406	TRIAL 99 | RMSE: 8.69507 | Best: 8.69356
+14118.3s	407	
+14118.3s	408	TRIAL 100 | RMSE: 8.69586 | Best: 8.69356
+14310.6s	409	
+14310.6s	410	TRIAL 101 | RMSE: 8.69443 | Best: 8.69356
+14495.6s	411	
+14495.6s	412	TRIAL 102 | RMSE: 8.69508 | Best: 8.69356
+14668.2s	413	
+14668.2s	414	TRIAL 103 | RMSE: 8.69618 | Best: 8.69356
+14843.0s	415	
+14843.0s	416	TRIAL 104 | RMSE: 8.69502 | Best: 8.69356
+15029.0s	417	
+15029.0s	418	TRIAL 105 | RMSE: 8.69535 | Best: 8.69356
+15239.8s	419	
+15239.8s	420	TRIAL 106 | RMSE: 8.69395 | Best: 8.69356
+15373.7s	421	
+15373.7s	422	TRIAL 107 | RMSE: 8.69974 | Best: 8.69356
+15524.5s	423	
+15524.5s	424	TRIAL 108 | RMSE: 8.69612 | Best: 8.69356
+15698.3s	425	
+15698.3s	426	TRIAL 109 | RMSE: 8.69382 | Best: 8.69356
+15872.4s	427	
+15872.4s	428	TRIAL 110 | RMSE: 8.69406 | Best: 8.69356
+16041.3s	429	
+16041.3s	430	TRIAL 111 | RMSE: 8.69450 | Best: 8.69356
+16201.1s	431	
+16201.1s	432	TRIAL 112 | RMSE: 8.69515 | Best: 8.69356
+16371.1s	433	
+16371.1s	434	TRIAL 113 | RMSE: 8.69478 | Best: 8.69356
+16569.3s	435	
+16569.3s	436	🏆 TRIAL 114 | RMSE: 8.69354 | Best: 8.69354
+16569.3s	437	NEW BEST PARAMS:
+16569.3s	438	  learning_rate: 0.015046
+16569.3s	439	  num_leaves: 95
+16569.3s	440	  max_depth: 9
+16569.3s	441	  min_child_samples: 65
+16569.3s	442	  subsample: 0.949660
+16569.3s	443	  colsample_bytree: 0.514962
+16569.3s	444	  reg_alpha: 1.331278
+16569.3s	445	  reg_lambda: 0.004713
+16754.1s	446	
+16754.1s	447	TRIAL 115 | RMSE: 8.69404 | Best: 8.69354
+16911.1s	448	
+16911.1s	449	TRIAL 116 | RMSE: 8.69528 | Best: 8.69354
+17116.1s	450	
+17116.1s	451	TRIAL 117 | RMSE: 8.69452 | Best: 8.69354
+17247.4s	452	
+17247.4s	453	TRIAL 118 | RMSE: 8.69719 | Best: 8.69354
+17413.6s	454	
+17413.6s	455	TRIAL 119 | RMSE: 8.69566 | Best: 8.69354
+17543.3s	456	
+17543.3s	457	TRIAL 120 | RMSE: 8.69807 | Best: 8.69354
+17707.7s	458	
+17707.7s	459	TRIAL 121 | RMSE: 8.69490 | Best: 8.69354
+17871.5s	460	
+17871.5s	461	TRIAL 122 | RMSE: 8.69471 | Best: 8.69354
+18029.3s	462	
+18029.3s	463	TRIAL 123 | RMSE: 8.70104 | Best: 8.69354
+18226.6s	464	
+18226.6s	465	🏆 TRIAL 124 | RMSE: 8.69337 | Best: 8.69337
+18226.6s	466	NEW BEST PARAMS:
+18226.6s	467	  learning_rate: 0.015076
+18226.6s	468	  num_leaves: 100
+18226.6s	469	  max_depth: 9
+18226.6s	470	  min_child_samples: 67
+18226.6s	471	  subsample: 0.907276
+18226.6s	472	  colsample_bytree: 0.513944
+18226.6s	473	  reg_alpha: 1.146415
+18226.6s	474	  reg_lambda: 0.004382
+18431.2s	475	
+18431.2s	476	TRIAL 125 | RMSE: 8.69865 | Best: 8.69337
+18617.1s	477	
+18617.1s	478	TRIAL 126 | RMSE: 8.69520 | Best: 8.69337
+18809.1s	479	
+18809.1s	480	TRIAL 127 | RMSE: 8.70006 | Best: 8.69337
+18966.9s	481	
+18966.9s	482	TRIAL 128 | RMSE: 8.70041 | Best: 8.69337
+19149.9s	483	
+19149.9s	484	TRIAL 129 | RMSE: 8.69438 | Best: 8.69337
+19291.0s	485	
+19291.0s	486	TRIAL 130 | RMSE: 8.69606 | Best: 8.69337
+19468.8s	487	
+19468.8s	488	TRIAL 131 | RMSE: 8.69415 | Best: 8.69337
+19639.3s	489	
+19639.3s	490	TRIAL 132 | RMSE: 8.69440 | Best: 8.69337
+19844.5s	491	
+19844.5s	492	TRIAL 133 | RMSE: 8.69403 | Best: 8.69337
+20022.9s	493	
+20022.9s	494	TRIAL 134 | RMSE: 8.69466 | Best: 8.69337
+20074.8s	495	
+20074.8s	496	TRIAL 135 | RMSE: 8.71058 | Best: 8.69337
+20237.0s	497	
+20237.0s	498	TRIAL 136 | RMSE: 8.69545 | Best: 8.69337
+20297.4s	499	
+20297.4s	500	TRIAL 137 | RMSE: 8.70861 | Best: 8.69337
+20480.3s	501	
+20480.3s	502	TRIAL 138 | RMSE: 8.69517 | Best: 8.69337
+20684.7s	503	
+20684.7s	504	TRIAL 139 | RMSE: 8.69391 | Best: 8.69337
+20883.0s	505	
+20883.0s	506	TRIAL 140 | RMSE: 8.69357 | Best: 8.69337
+21082.7s	507	
+21082.7s	508	TRIAL 141 | RMSE: 8.69389 | Best: 8.69337
+21275.0s	509	
+21275.0s	510	TRIAL 142 | RMSE: 8.69422 | Best: 8.69337
+21479.3s	511	
+21479.3s	512	TRIAL 143 | RMSE: 8.69398 | Best: 8.69337
+21651.2s	513	
+21651.2s	514	TRIAL 144 | RMSE: 8.69447 | Best: 8.69337
+21815.6s	515	
+21815.6s	516	TRIAL 145 | RMSE: 8.69497 | Best: 8.69337
+22015.0s	517	
+22015.0s	518	TRIAL 146 | RMSE: 8.69372 | Best: 8.69337
+22215.1s	519	
+22215.1s	520	TRIAL 147 | RMSE: 8.69445 | Best: 8.69337
+22367.8s	521	
+22367.8s	522	TRIAL 148 | RMSE: 8.69493 | Best: 8.69337
+22459.6s	523	
+22459.6s	524	TRIAL 149 | RMSE: 8.70227 | Best: 8.69337
+22671.9s	525	
+22671.9s	526	🏆 TRIAL 150 | RMSE: 8.69279 | Best: 8.69279
+22671.9s	527	NEW BEST PARAMS:
+22671.9s	528	  learning_rate: 0.015031
+22671.9s	529	  num_leaves: 86
+22671.9s	530	  max_depth: 8
+22671.9s	531	  min_child_samples: 69
+22671.9s	532	  subsample: 0.829683
+22671.9s	533	  colsample_bytree: 0.512639
+22671.9s	534	  reg_alpha: 0.397748
+22671.9s	535	  reg_lambda: 0.038080
+22864.9s	536	
+22864.9s	537	TRIAL 151 | RMSE: 8.69419 | Best: 8.69279
+23048.1s	538	
+23048.1s	539	TRIAL 152 | RMSE: 8.69415 | Best: 8.69279
+23235.3s	540	
+23235.3s	541	TRIAL 153 | RMSE: 8.69475 | Best: 8.69279
+23400.4s	542	
+23400.4s	543	TRIAL 154 | RMSE: 8.69515 | Best: 8.69279
+23588.7s	544	
+23588.7s	545	TRIAL 155 | RMSE: 8.69500 | Best: 8.69279
+23754.4s	546	
+23754.4s	547	TRIAL 156 | RMSE: 8.69466 | Best: 8.69279
+23953.2s	548	
+23953.2s	549	TRIAL 157 | RMSE: 8.69393 | Best: 8.69279
+24105.8s	550	
+24105.8s	551	TRIAL 158 | RMSE: 8.69634 | Best: 8.69279
+24286.0s	552	
+24286.0s	553	TRIAL 159 | RMSE: 8.69410 | Best: 8.69279
+24499.8s	554	
+24499.8s	555	TRIAL 160 | RMSE: 8.69325 | Best: 8.69279
+24698.0s	556	
+24698.0s	557	TRIAL 161 | RMSE: 8.69460 | Best: 8.69279
+24889.8s	558	
+24889.8s	559	TRIAL 162 | RMSE: 8.69404 | Best: 8.69279
+24934.4s	560	
+24934.4s	561	TRIAL 163 | RMSE: 8.71510 | Best: 8.69279
+25087.8s	562	
+25087.8s	563	TRIAL 164 | RMSE: 8.69570 | Best: 8.69279
+25270.3s	564	
+25270.3s	565	TRIAL 165 | RMSE: 8.69457 | Best: 8.69279
+25442.9s	566	
+25442.9s	567	TRIAL 166 | RMSE: 8.69956 | Best: 8.69279
+25629.0s	568	
+25629.0s	569	TRIAL 167 | RMSE: 8.69457 | Best: 8.69279
+25790.9s	570	
+25790.9s	571	TRIAL 168 | RMSE: 8.69547 | Best: 8.69279
+25987.2s	572	
+25987.2s	573	TRIAL 169 | RMSE: 8.69552 | Best: 8.69279
+26161.8s	574	
+26161.8s	575	TRIAL 170 | RMSE: 8.69506 | Best: 8.69279
+26387.9s	576	
+26387.9s	577	🏆 TRIAL 171 | RMSE: 8.69248 | Best: 8.69248
+26387.9s	578	NEW BEST PARAMS:
+26387.9s	579	  learning_rate: 0.015015
+26387.9s	580	  num_leaves: 85
+26387.9s	581	  max_depth: 8
+26387.9s	582	  min_child_samples: 67
+26387.9s	583	  subsample: 0.834095
+26387.9s	584	  colsample_bytree: 0.506930
+26387.9s	585	  reg_alpha: 0.492574
+26387.9s	586	  reg_lambda: 0.025369
+26581.0s	587	
+26581.0s	588	TRIAL 172 | RMSE: 8.69460 | Best: 8.69248
+26762.2s	589	
+26762.2s	590	TRIAL 173 | RMSE: 8.69510 | Best: 8.69248
+26940.4s	591	
+26940.4s	592	TRIAL 174 | RMSE: 8.69425 | Best: 8.69248
+27094.4s	593	
+27094.4s	594	TRIAL 175 | RMSE: 8.69518 | Best: 8.69248
+27094.4s	595	
+27094.4s	596	======================================================================
+27094.4s	597	OPTUNA OPTIMIZATION COMPLETE
+27094.4s	598	======================================================================
+27094.4s	599	Total Time: 7.52 hours
+27094.4s	600	Trials Completed: 176
+27094.4s	601	Best Trial: 171
+27094.4s	602	Best RMSE: 8.69248
+27094.4s	603	
+27094.4s	604	======================================================================
+27094.4s	605	BEST PARAMETERS (COPY THIS!)
+27094.4s	606	======================================================================
+27094.4s	607	lgb_params = {
+27094.4s	608	    'objective': 'regression',
+27094.4s	609	    'metric': 'rmse',
+27094.4s	610	    'boosting_type': 'gbdt',
+27094.4s	611	    'device': 'gpu',
+27094.4s	612	    'seed': 42,
+27094.4s	613	    'learning_rate': 0.015015,
+27094.4s	614	    'num_leaves': 85,
+27094.4s	615	    'max_depth': 8,
+27094.4s	616	    'min_child_samples': 67,
+27094.4s	617	    'subsample': 0.834095,
+27094.4s	618	    'colsample_bytree': 0.506930,
+27094.4s	619	    'reg_alpha': 0.492574,
+27094.4s	620	    'reg_lambda': 0.025369,
+27094.4s	621	}
+27094.4s	622	
+27094.4s	623	--- Training Final Model with Best Parameters (5-fold CV) ---
+27094.4s	624	
+27094.4s	625	Fold 1/5...
+27100.6s	626	Training until validation scores don't improve for 200 rounds
+27126.1s	627	[500]	valid_0's rmse: 8.69708
+27144.7s	628	[1000]	valid_0's rmse: 8.67661
+27160.8s	629	[1500]	valid_0's rmse: 8.66993
+27176.5s	630	[2000]	valid_0's rmse: 8.66607
+27192.2s	631	[2500]	valid_0's rmse: 8.66441
+27207.5s	632	[3000]	valid_0's rmse: 8.66342
+27217.9s	633	Early stopping, best iteration is:
+27217.9s	634	[3145]	valid_0's rmse: 8.66314
+27277.2s	635	  RMSE: 8.66314 | Best Iter: 3145
+27277.2s	636	
+27277.2s	637	Fold 2/5...
+27283.7s	638	Training until validation scores don't improve for 200 rounds
+27308.9s	639	[500]	valid_0's rmse: 8.70662
+27327.7s	640	[1000]	valid_0's rmse: 8.68678
+27343.9s	641	[1500]	valid_0's rmse: 8.68185
+27359.5s	642	[2000]	valid_0's rmse: 8.67875
+27374.9s	643	[2500]	valid_0's rmse: 8.67622
+27390.0s	644	[3000]	valid_0's rmse: 8.67559
+27405.4s	645	[3500]	valid_0's rmse: 8.67534
+27406.2s	646	Early stopping, best iteration is:
+27406.2s	647	[3331]	valid_0's rmse: 8.6748
+27463.2s	648	  RMSE: 8.67480 | Best Iter: 3331
+27463.2s	649	
+27463.2s	650	Fold 3/5...
+27469.4s	651	Training until validation scores don't improve for 200 rounds
+27495.0s	652	[500]	valid_0's rmse: 8.70028
+27513.6s	653	[1000]	valid_0's rmse: 8.68109
+27530.0s	654	[1500]	valid_0's rmse: 8.67545
+27545.8s	655	[2000]	valid_0's rmse: 8.67302
+27561.2s	656	[2500]	valid_0's rmse: 8.67164
+27573.2s	657	Early stopping, best iteration is:
+27573.2s	658	[2692]	valid_0's rmse: 8.67108
+27625.6s	659	  RMSE: 8.67108 | Best Iter: 2692
+27625.6s	660	
+27625.6s	661	Fold 4/5...
+27632.1s	662	Training until validation scores don't improve for 200 rounds
+27657.7s	663	[500]	valid_0's rmse: 8.7024
+27676.5s	664	[1000]	valid_0's rmse: 8.68236
+27693.1s	665	[1500]	valid_0's rmse: 8.67711
+27709.0s	666	[2000]	valid_0's rmse: 8.6747
+27724.6s	667	[2500]	valid_0's rmse: 8.6731
+27726.5s	668	Early stopping, best iteration is:
+27726.5s	669	[2363]	valid_0's rmse: 8.67289
+27768.6s	670	  RMSE: 8.67289 | Best Iter: 2363
+27768.6s	671	
+27768.6s	672	Fold 5/5...
+27775.0s	673	Training until validation scores don't improve for 200 rounds
+27800.7s	674	[500]	valid_0's rmse: 8.72961
+27819.6s	675	[1000]	valid_0's rmse: 8.71213
+27836.0s	676	[1500]	valid_0's rmse: 8.705
+27851.8s	677	[2000]	valid_0's rmse: 8.70184
+27867.5s	678	[2500]	valid_0's rmse: 8.70044
+27883.1s	679	[3000]	valid_0's rmse: 8.69958
+27898.0s	680	Early stopping, best iteration is:
+27898.0s	681	[3282]	valid_0's rmse: 8.69933
+27960.2s	682	  RMSE: 8.69933 | Best Iter: 3282
+27960.2s	683	
+27960.2s	684	======================================================================
+27960.2s	685	FINAL RESULTS
+27960.2s	686	======================================================================
+27960.2s	687	CV RMSEs: ['8.6631', '8.6748', '8.6711', '8.6729', '8.6993']
+27960.2s	688	Mean CV:  8.67625 ± 0.01220
+27960.2s	689	OOF RMSE: 8.67626
+27960.2s	690	V3 Baseline OOF: 8.68713 | LB: 8.63377
+27960.2s	691	Improvement: 0.01087
+27960.5s	692	
+27960.5s	693	✓ Saved: submission_v6.csv
+27960.5s	694	
+27960.5s	695	======================================================================
+27960.5s	696	TOP 10 TRIALS
+27960.5s	697	======================================================================
+27960.5s	698	     trial      rmse  learning_rate  num_leaves  max_depth  min_child_samples  subsample  colsample_bytree  reg_alpha  reg_lambda
+27960.5s	699	171    171  8.692481       0.015015          85          8                 67   0.834095          0.506930   0.492574    0.025369
+27960.5s	700	150    150  8.692790       0.015031          86          8                 69   0.829683          0.512639   0.397748    0.038080
+27960.5s	701	160    160  8.693246       0.015007          91          8                 65   0.843207          0.520099   3.084367    0.021700
+27960.5s	702	124    124  8.693371       0.015076         100          9                 67   0.907276          0.513944   1.146415    0.004382
+27960.5s	703	114    114  8.693539       0.015046          95          9                 65   0.949660          0.514962   1.331278    0.004713
+27960.5s	704	54      54  8.693560       0.015438          86          8                 55   0.855509          0.500330   1.344573    0.004911
+27960.5s	705	140    140  8.693569       0.015116          86          8                 65   0.835297          0.500075   0.313622    0.021199
+27960.5s	706	53      53  8.693700       0.015391          94          9                 61   0.877482          0.515340   1.242951    0.010790
+27960.5s	707	146    146  8.693718       0.015207          84          8                 66   0.819991          0.507651   0.399573    0.041137
+27960.5s	708	71      71  8.693760       0.015034          87          8                 58   0.845718          0.527366   0.887962    0.004377
+27960.5s	709	
+27960.5s	710	--- V6 Complete ---
+27960.5s	711	OOF RMSE: 8.67626

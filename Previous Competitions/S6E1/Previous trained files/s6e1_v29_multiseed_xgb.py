@@ -1,0 +1,341 @@
+"""
+S6E1 V29 - Multi-seed XGBoost (3 seeds)
+=======================================
+Same technique as V28 (multi-seed TabM) but for XGBoost.
+Uses EXACT same V23 architecture with 3 different seeds, averaged.
+
+Seeds: 42, 100, 314
+Expected runtime: ~3-4 hours on T4 GPU (10 folds × 3 seeds = 30 XGB models)
+
+Baseline to beat: V28 = 8.56178 LB (TabM), V23 = 8.56367 LB (XGB single seed)
+"""
+
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import KFold
+from sklearn.linear_model import RidgeCV
+from sklearn.preprocessing import TargetEncoder
+from sklearn.base import BaseEstimator, TransformerMixin
+import xgboost as xgb
+import pandas as pd
+import numpy as np
+import gc
+import warnings
+warnings.filterwarnings("ignore")
+
+# ============================================================================
+# 1. CONFIGURATION
+# ============================================================================
+
+class CFG:
+    EXP_ID = "V29_MultiSeed_XGB"
+    CV_SEED = 1003  # Same as V23 for CV splits
+    N_FOLDS = 10
+    TARGET = "exam_score"
+    ID_COL = "id"
+    
+    # 3 Seeds for multi-seed averaging (like V28 TabM)
+    MODEL_SEEDS = [42, 100, 314]
+    
+    # XGBoost Params (EXACT SAME as V23)
+    XGB_PARAMS = {
+        "n_estimators": 20000,
+        "learning_rate": 0.004,
+        "max_depth": 9,
+        "subsample": 0.78,
+        "reg_lambda": 6,
+        "reg_alpha": 0.15,
+        "colsample_bytree": 0.55,
+        "colsample_bynode": 0.65,
+        "min_child_weight": 6,
+        "tree_method": "hist",
+        "early_stopping_rounds": 100,
+        "eval_metric": "rmse",
+        "enable_categorical": True,
+        "device": "cuda"
+    }
+
+np.random.seed(42)
+
+# ============================================================================
+# 2. DATA LOADING
+# ============================================================================
+
+print("="*80)
+print("S6E1 V29 - Multi-seed XGBoost (3 seeds)")
+print("="*80)
+
+train_df = pd.read_csv("/kaggle/input/playground-series-s6e1/train.csv")
+test_df = pd.read_csv("/kaggle/input/playground-series-s6e1/test.csv")
+original_df = pd.read_csv("/kaggle/input/exam-score-prediction-dataset/Exam_Score_Prediction.csv")
+submission_df = pd.read_csv("/kaggle/input/playground-series-s6e1/sample_submission.csv")
+
+print(f"Train: {train_df.shape}")
+print(f"Test:  {test_df.shape}")
+print(f"Orig:  {original_df.shape}")
+print(f"Seeds: {CFG.MODEL_SEEDS}")
+
+base_features = [col for col in train_df.columns if col not in [CFG.TARGET, CFG.ID_COL]]
+CATS = train_df.select_dtypes("object").columns.to_list()
+
+# ============================================================================
+# 3. CATEGORY MEAN TRANSFORMER (SAME AS V23)
+# ============================================================================
+
+class CategoryMeanTransformer(BaseEstimator, TransformerMixin):
+    def __init__(self, cat_cols=None):
+        self.cat_cols = cat_cols
+        self.mappings_ = {}
+    
+    def fit(self, X, y):
+        X = X.copy()
+        if self.cat_cols is None:
+            self.cat_cols = X.select_dtypes(include=['category', 'object']).columns.tolist()
+        self.mappings_ = {}
+        for col in self.cat_cols:
+            df_temp = pd.DataFrame({col: X[col], 'y': y})
+            group_means = df_temp.groupby(col, dropna=False)['y'].mean()
+            sorted_categories = group_means.sort_values().index
+            self.mappings_[col] = {cat: i for i, cat in enumerate(sorted_categories)}
+        return self
+
+    def transform(self, X, y=None):
+        X = X.copy()
+        for col, mapping in self.mappings_.items():
+            if col in X.columns:
+                X[col] = X[col].map(mapping)
+        return X
+
+# Apply CMT (same as V23)
+categorical_features = train_df.select_dtypes(include=['category', 'object']).columns.tolist()
+cmtencoder = CategoryMeanTransformer(cat_cols=categorical_features)
+tmp = cmtencoder.fit_transform(train_df[categorical_features], np.array(train_df[CFG.TARGET]).reshape(-1,)).add_suffix('_cm')
+train_df = pd.concat([train_df, tmp], axis=1)
+test_df = pd.concat([test_df, cmtencoder.transform(test_df[categorical_features]).add_suffix('_cm')], axis=1)
+original_df = pd.concat([original_df, cmtencoder.transform(original_df[categorical_features]).add_suffix('_cm')], axis=1)
+
+# ============================================================================
+# 4. FEATURE ENGINEERING (EXACT SAME AS V23)
+# ============================================================================
+
+print("\nFeature Engineering (V23 EXACT)...")
+
+def preprocess_optimized(df, cmt_cols):
+    df_temp = df.copy()
+    eps = 1e-5
+
+    df_temp['study_hours_squared'] = df_temp['study_hours'] ** 2
+    df_temp['class_attendance_squared'] = df_temp['class_attendance'] ** 2
+    df_temp['sleep_hours_squared'] = df_temp['sleep_hours'] ** 2
+    df_temp['age_squared'] = df_temp['age'] ** 2
+
+    sh_pos = df_temp['study_hours'].clip(lower=0)
+    ca_pos = df_temp['class_attendance'].clip(lower=0)
+    sl_pos = df_temp['sleep_hours'].clip(lower=0)
+
+    df_temp['log_study_hours'] = np.log1p(sh_pos)
+    df_temp['log_class_attendance'] = np.log1p(ca_pos)
+    df_temp['log_sleep_hours'] = np.log1p(sl_pos)
+    df_temp['sqrt_study_hours'] = np.sqrt(sh_pos)
+    df_temp['sqrt_class_attendance'] = np.sqrt(ca_pos)
+
+    df_temp['study_hours_times_attendance'] = df_temp['study_hours'] * df_temp['class_attendance']
+    df_temp['study_hours_times_sleep'] = df_temp['study_hours'] * df_temp['sleep_hours']
+    df_temp['attendance_times_sleep'] = df_temp['class_attendance'] * df_temp['sleep_hours']
+    df_temp['age_times_study_hours'] = df_temp['age'] * df_temp['study_hours']
+
+    df_temp['study_hours_over_sleep'] = df_temp['study_hours'] / (df_temp['sleep_hours'] + eps)
+    df_temp['attendance_over_sleep'] = df_temp['class_attendance'] / (df_temp['sleep_hours'] + eps)
+    df_temp['attendance_over_study'] = df_temp['class_attendance'] / (df_temp['study_hours'] + eps)
+
+    sleep_quality_map = {'poor': 0, 'average': 1, 'good': 2}
+    facility_rating_map = {'low': 0, 'medium': 1, 'high': 2}
+    exam_difficulty_map = {'easy': 0, 'moderate': 1, 'hard': 2}
+
+    df_temp['sleep_quality_numeric'] = df_temp['sleep_quality'].map(sleep_quality_map).fillna(1).astype(int)
+    df_temp['facility_rating_numeric'] = df_temp['facility_rating'].map(facility_rating_map).fillna(1).astype(int)
+    df_temp['exam_difficulty_numeric'] = df_temp['exam_difficulty'].map(exam_difficulty_map).fillna(1).astype(int)
+
+    df_temp['study_hours_times_sleep_quality'] = df_temp['study_hours'] * df_temp['sleep_quality_numeric']
+    df_temp['attendance_times_facility'] = df_temp['class_attendance'] * df_temp['facility_rating_numeric']
+    df_temp['sleep_hours_times_difficulty'] = df_temp['sleep_hours'] * df_temp['exam_difficulty_numeric']
+    df_temp['facility_x_sleepq'] = df_temp['facility_rating_numeric'] * df_temp['sleep_quality_numeric']
+    df_temp['difficulty_x_facility'] = df_temp['exam_difficulty_numeric'] * df_temp['facility_rating_numeric']
+
+    df_temp["high_att_high_study"] = ((df_temp["class_attendance"] >= 90) & (df_temp["study_hours"] >= 6)).astype(int)
+    df_temp["ideal_sleep_flag"] = ((df_temp["sleep_hours"] >= 7) & (df_temp["sleep_hours"] <= 9)).astype(int)
+    df_temp["high_study_flag"] = (df_temp["study_hours"] >= 7).astype(int)
+    df_temp['efficiency'] = (df_temp['study_hours'] * df_temp['class_attendance']) / (df_temp['sleep_hours'] + 1)
+    df_temp['sleep_gap_8'] = (df_temp['sleep_hours'] - 8.0).abs()
+    df_temp['attendance_gap_100'] = (df_temp['class_attendance'] - 100.0).abs()
+
+    df_temp['study_bin_num'] = pd.cut(df_temp['study_hours'], bins=5, labels=False).astype(int)
+    df_temp['attendance_bin_num'] = pd.cut(df_temp['class_attendance'], bins=5, labels=False).astype(int)
+    df_temp['sleep_bin_num'] = pd.cut(df_temp['sleep_hours'], bins=5, labels=False).astype(int)
+    df_temp['age_bin_num'] = pd.cut(df_temp['age'], bins=5, labels=False).astype(int)
+
+    numeric_features = [
+        'study_hours_squared', 'class_attendance_squared', 'sleep_hours_squared', 'age_squared',
+        'log_study_hours', 'log_class_attendance', 'log_sleep_hours',
+        'sqrt_study_hours', 'sqrt_class_attendance',
+        'study_hours_times_attendance', 'study_hours_times_sleep', 'attendance_times_sleep',
+        'age_times_study_hours',
+        'study_hours_over_sleep', 'attendance_over_sleep', 'attendance_over_study',
+        'sleep_quality_numeric', 'facility_rating_numeric', 'exam_difficulty_numeric',
+        'study_hours_times_sleep_quality', 'attendance_times_facility', 'sleep_hours_times_difficulty',
+        'facility_x_sleepq', 'difficulty_x_facility',
+        'high_att_high_study', 'ideal_sleep_flag', 'high_study_flag',
+        'efficiency', 'sleep_gap_8', 'attendance_gap_100',
+        'study_bin_num', 'attendance_bin_num', 'sleep_bin_num', 'age_bin_num'
+    ] + cmt_cols
+
+    return df_temp[base_features + numeric_features], numeric_features
+
+cmt_cols = [c for c in train_df.columns if c.endswith('_cm')]
+X_raw, numeric_cols = preprocess_optimized(train_df, cmt_cols)
+y = train_df[CFG.TARGET].reset_index(drop=True)
+X_test_raw, _ = preprocess_optimized(test_df, cmt_cols)
+X_orig_raw, _ = preprocess_optimized(original_df, cmt_cols)
+y_orig = original_df[CFG.TARGET].reset_index(drop=True)
+
+full_data = pd.concat([X_raw, X_test_raw, X_orig_raw], axis=0, ignore_index=True)
+for col in numeric_cols:
+    full_data[col] = full_data[col].astype(float)
+
+X = full_data.iloc[:len(train_df)].copy()
+X_test = full_data.iloc[len(train_df):len(train_df) + len(test_df)].copy()
+X_original = full_data.iloc[len(train_df) + len(test_df):].copy()
+
+print(f"Features: {X.shape[1]}")
+
+# ============================================================================
+# 5. RIDGE META-FEATURE (SAME AS V23)
+# ============================================================================
+
+print("\nTraining Ridge Meta-Feature...")
+
+kf = KFold(n_splits=CFG.N_FOLDS, shuffle=True, random_state=CFG.CV_SEED)
+
+oof_pred_lr = np.zeros(X.shape[0])
+test_preds_lr = np.zeros((X_test.shape[0], CFG.N_FOLDS))
+orig_preds_lr = np.zeros(X_original.shape[0])
+
+for fold, (train_index, val_index) in enumerate(kf.split(X, y), start=1):
+    X_train_fold, X_val = X.iloc[train_index], X.iloc[val_index]
+    y_train_fold, y_val = y.iloc[train_index], y.iloc[val_index]
+
+    X_train_combined = pd.concat([X_train_fold, X_original], axis=0)
+    y_train_combined = pd.concat([y_train_fold, y_orig], axis=0)
+
+    target_encoder = TargetEncoder(smooth='auto', target_type='continuous')
+    X_train_encoded = X_train_combined.copy()
+    X_val_encoded = X_val.copy()
+    X_test_encoded = X_test.copy()
+
+    X_train_encoded[CATS] = target_encoder.fit_transform(X_train_combined[CATS], y_train_combined)
+    X_val_encoded[CATS] = target_encoder.transform(X_val[CATS])
+    X_test_encoded[CATS] = target_encoder.transform(X_test[CATS])
+
+    alphas = np.logspace(-3, 3, 20)
+    lr_model = RidgeCV(alphas=alphas, cv=5, scoring='neg_root_mean_squared_error')
+    lr_model.fit(X_train_encoded, y_train_combined.to_numpy().ravel())
+
+    oof_pred_lr[val_index] = np.clip(lr_model.predict(X_val_encoded), 0, 100)
+    test_preds_lr[:, fold - 1] = np.clip(lr_model.predict(X_test_encoded), 0, 100)
+    orig_preds_lr += np.clip(lr_model.predict(X_train_encoded.iloc[-X_original.shape[0]:]), 0, 100) / CFG.N_FOLDS
+
+lr_oof_rmse = np.sqrt(mean_squared_error(y, oof_pred_lr))
+print(f"Ridge OOF RMSE: {lr_oof_rmse:.5f}")
+
+# Prepare data with Ridge meta-feature
+for col in base_features:
+    full_data[col] = full_data[col].astype(str).astype("category")
+for col in numeric_cols:
+    full_data[col] = full_data[col].astype(float)
+
+X_xgb = full_data.iloc[:len(train_df)].copy()
+X_test_xgb = full_data.iloc[len(train_df):len(train_df) + len(test_df)].copy()
+X_original_xgb = full_data.iloc[len(train_df) + len(test_df):].copy()
+
+X_xgb["feature_lr_pred"] = oof_pred_lr
+X_test_xgb["feature_lr_pred"] = test_preds_lr.mean(axis=1)
+X_original_xgb["feature_lr_pred"] = orig_preds_lr
+
+# ============================================================================
+# 6. MULTI-SEED XGBOOST TRAINING
+# ============================================================================
+
+print(f"\nTraining XGBoost (3 Seeds × 10 Folds = 30 Models)...")
+
+all_seed_oof = {}
+all_seed_test = {}
+
+for seed_idx, model_seed in enumerate(CFG.MODEL_SEEDS):
+    print(f"\n{'='*40}")
+    print(f"Seed {seed_idx+1}/{len(CFG.MODEL_SEEDS)}: {model_seed}")
+    print(f"{'='*40}")
+    
+    xgb_params = CFG.XGB_PARAMS.copy()
+    xgb_params["random_state"] = model_seed
+    
+    oof_predictions = np.zeros(len(X_xgb))
+    test_predictions = []
+    fold_scores = []
+    
+    for fold, (train_index, val_index) in enumerate(kf.split(X_xgb, y), start=1):
+        X_train_fold, X_val = X_xgb.iloc[train_index], X_xgb.iloc[val_index]
+        y_train_fold, y_val = y.iloc[train_index], y.iloc[val_index]
+
+        X_train_combined = pd.concat([X_train_fold, X_original_xgb], axis=0)
+        y_train_combined = pd.concat([y_train_fold, y_orig], axis=0)
+
+        model = xgb.XGBRegressor(**xgb_params)
+        model.fit(X_train_combined, y_train_combined, eval_set=[(X_val, y_val)], verbose=False)
+
+        val_preds = model.predict(X_val)
+        oof_predictions[val_index] = val_preds
+        test_predictions.append(model.predict(X_test_xgb))
+        
+        rmse = np.sqrt(mean_squared_error(y_val, val_preds))
+        fold_scores.append(rmse)
+        print(f"Fold {fold} RMSE: {rmse:.5f} (Trees: {model.best_iteration})")
+        
+        del model
+        gc.collect()
+    
+    seed_oof_rmse = np.sqrt(mean_squared_error(y, oof_predictions))
+    print(f"Seed {model_seed} OOF RMSE: {seed_oof_rmse:.5f}")
+    
+    all_seed_oof[model_seed] = oof_predictions.copy()
+    all_seed_test[model_seed] = np.mean(test_predictions, axis=0)
+
+# ============================================================================
+# 7. RESULTS & SUBMISSION
+# ============================================================================
+
+print("\n" + "="*80)
+print("MULTI-SEED RESULTS")
+print("="*80)
+
+for seed, oof in all_seed_oof.items():
+    seed_rmse = np.sqrt(mean_squared_error(y, oof))
+    print(f"Seed {seed} OOF: {seed_rmse:.5f}")
+
+avg_oof = np.mean([oof for oof in all_seed_oof.values()], axis=0)
+avg_oof_rmse = np.sqrt(mean_squared_error(y, avg_oof))
+avg_test = np.mean([test for test in all_seed_test.values()], axis=0)
+
+print(f"\n3-Seed Averaged OOF RMSE: {avg_oof_rmse:.5f}")
+print(f"V23 Baseline (single seed): 8.60723 (OOF) / 8.56367 (LB)")
+print(f"V28 TabM Baseline: 8.59671 (OOF) / 8.56178 (LB)")
+print(f"Delta vs V23 OOF: {avg_oof_rmse - 8.60723:+.5f}")
+
+oof_df = pd.DataFrame({'id': train_df[CFG.ID_COL], CFG.TARGET: avg_oof})
+oof_df.to_csv('oof_v29_multiseed_xgb.csv', index=False)
+
+submission_df[CFG.TARGET] = avg_test
+submission_df.to_csv('submission_v29_multiseed_xgb.csv', index=False)
+
+print("\nSaved: oof_v29_multiseed_xgb.csv, submission_v29_multiseed_xgb.csv")
+print(f"\n{'='*80}")
+print("V29 COMPLETE - Multi-seed XGBoost")
+print("="*80)

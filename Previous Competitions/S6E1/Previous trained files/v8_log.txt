@@ -1,0 +1,571 @@
+Time    #   Log Message
+8.0s	0	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.0s	1	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.0s	2	0.00s - to python to disable frozen modules.
+8.0s	3	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.7s	4	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.7s	5	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.7s	6	0.00s - to python to disable frozen modules.
+8.7s	7	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+14.6s	8	======================================================================
+14.6s	9	S6E1 V8 - XGBoost Optuna (Advanced FE)
+14.6s	10	======================================================================
+14.6s	11	Target: Beat V6 LightGBM (LB 8.62597)
+14.6s	12	
+14.6s	13	--- Loading Data ---
+17.6s	14	Train: (630000, 13), Test: (270000, 12), Orig: (20000, 13)
+17.6s	15	Base Features: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+17.6s	16	
+17.6s	17	--- FE: Original Data Aggregations ---
+18.5s	18	Created 22 orig aggregation features
+18.5s	19	--- FE: Ratio/Diff Features ---
+18.5s	20	Created 8 ratio/diff features
+18.5s	21	--- FE: Key Interactions ---
+18.5s	22	Total Features: 46
+18.5s	23	
+19.5s	24	X shape: (630000, 46)
+19.5s	25	--- Starting Optuna Optimization ---
+74.2s	26	
+74.2s	27	🏆 TRIAL 0 | RMSE: 8.68678 | Best: 8.68678
+74.2s	28	NEW BEST PARAMS:
+74.2s	29	  learning_rate: 0.014364
+74.2s	30	  max_depth: 7
+74.2s	31	  min_child_weight: 37
+74.2s	32	  subsample: 0.779598
+74.2s	33	  colsample_bytree: 0.562407
+74.2s	34	  reg_lambda: 0.205111
+74.2s	35	  reg_alpha: 0.001494
+103.6s	36	
+103.6s	37	TRIAL 1 | RMSE: 8.69785 | Best: 8.68678
+132.2s	38	
+132.2s	39	TRIAL 2 | RMSE: 8.75975 | Best: 8.68678
+166.6s	40	
+166.6s	41	TRIAL 3 | RMSE: 8.73820 | Best: 8.68678
+195.3s	42	
+195.3s	43	TRIAL 4 | RMSE: 8.72931 | Best: 8.68678
+228.8s	44	
+228.8s	45	TRIAL 5 | RMSE: 8.70043 | Best: 8.68678
+292.2s	46	
+292.2s	47	TRIAL 6 | RMSE: 8.70114 | Best: 8.68678
+353.8s	48	
+353.8s	49	TRIAL 7 | RMSE: 8.69151 | Best: 8.68678
+382.6s	50	
+382.6s	51	TRIAL 8 | RMSE: 8.77259 | Best: 8.68678
+416.3s	52	
+416.3s	53	TRIAL 9 | RMSE: 8.71670 | Best: 8.68678
+463.7s	54	
+463.7s	55	🏆 TRIAL 10 | RMSE: 8.68412 | Best: 8.68412
+463.7s	56	NEW BEST PARAMS:
+463.7s	57	  learning_rate: 0.017842
+463.7s	58	  max_depth: 6
+463.7s	59	  min_child_weight: 49
+463.7s	60	  subsample: 0.879687
+463.7s	61	  colsample_bytree: 0.506147
+463.7s	62	  reg_lambda: 0.625297
+463.7s	63	  reg_alpha: 0.001110
+511.1s	64	
+511.1s	65	TRIAL 11 | RMSE: 8.68517 | Best: 8.68412
+553.7s	66	
+553.7s	67	TRIAL 12 | RMSE: 8.68528 | Best: 8.68412
+601.4s	68	
+601.4s	69	TRIAL 13 | RMSE: 8.68646 | Best: 8.68412
+640.9s	70	
+640.9s	71	TRIAL 14 | RMSE: 8.69119 | Best: 8.68412
+678.5s	72	
+678.5s	73	TRIAL 15 | RMSE: 8.68965 | Best: 8.68412
+725.6s	74	
+725.6s	75	TRIAL 16 | RMSE: 8.68928 | Best: 8.68412
+765.0s	76	
+765.0s	77	TRIAL 17 | RMSE: 8.69333 | Best: 8.68412
+812.7s	78	
+812.7s	79	TRIAL 18 | RMSE: 8.68833 | Best: 8.68412
+856.4s	80	
+856.4s	81	TRIAL 19 | RMSE: 8.68822 | Best: 8.68412
+889.8s	82	
+889.8s	83	TRIAL 20 | RMSE: 8.69194 | Best: 8.68412
+932.7s	84	
+932.7s	85	TRIAL 21 | RMSE: 8.68519 | Best: 8.68412
+972.0s	86	
+972.0s	87	TRIAL 22 | RMSE: 8.68942 | Best: 8.68412
+1019.9s	88	
+1019.9s	89	TRIAL 23 | RMSE: 8.69117 | Best: 8.68412
+1060.7s	90	
+1060.7s	91	TRIAL 24 | RMSE: 8.68655 | Best: 8.68412
+1106.7s	92	
+1106.7s	93	TRIAL 25 | RMSE: 8.68610 | Best: 8.68412
+1146.2s	94	
+1146.2s	95	TRIAL 26 | RMSE: 8.69523 | Best: 8.68412
+1185.3s	96	
+1185.3s	97	TRIAL 27 | RMSE: 8.68924 | Best: 8.68412
+1229.2s	98	
+1229.2s	99	TRIAL 28 | RMSE: 8.68684 | Best: 8.68412
+1256.5s	100	
+1256.5s	101	TRIAL 29 | RMSE: 8.69285 | Best: 8.68412
+1316.7s	102	
+1316.7s	103	TRIAL 30 | RMSE: 8.68523 | Best: 8.68412
+1376.8s	104	
+1376.8s	105	TRIAL 31 | RMSE: 8.68548 | Best: 8.68412
+1430.2s	106	
+1430.2s	107	TRIAL 32 | RMSE: 8.68564 | Best: 8.68412
+1473.9s	108	
+1473.9s	109	TRIAL 33 | RMSE: 8.68682 | Best: 8.68412
+1525.3s	110	
+1525.3s	111	TRIAL 34 | RMSE: 8.68551 | Best: 8.68412
+1574.0s	112	
+1574.0s	113	TRIAL 35 | RMSE: 8.69577 | Best: 8.68412
+1633.1s	114	
+1633.1s	115	TRIAL 36 | RMSE: 8.68533 | Best: 8.68412
+1678.2s	116	
+1678.2s	117	TRIAL 37 | RMSE: 8.68759 | Best: 8.68412
+1726.5s	118	
+1726.5s	119	TRIAL 38 | RMSE: 8.69196 | Best: 8.68412
+1763.0s	120	
+1763.0s	121	TRIAL 39 | RMSE: 8.69101 | Best: 8.68412
+1797.4s	122	
+1797.4s	123	TRIAL 40 | RMSE: 8.74580 | Best: 8.68412
+1840.6s	124	
+1840.6s	125	TRIAL 41 | RMSE: 8.68442 | Best: 8.68412
+1880.9s	126	
+1880.9s	127	TRIAL 42 | RMSE: 8.69017 | Best: 8.68412
+1922.9s	128	
+1922.9s	129	TRIAL 43 | RMSE: 8.68626 | Best: 8.68412
+1956.1s	130	
+1956.1s	131	TRIAL 44 | RMSE: 8.69272 | Best: 8.68412
+1996.0s	132	
+1996.0s	133	TRIAL 45 | RMSE: 8.69507 | Best: 8.68412
+2033.2s	134	
+2033.2s	135	TRIAL 46 | RMSE: 8.69035 | Best: 8.68412
+2069.6s	136	
+2069.6s	137	TRIAL 47 | RMSE: 8.68825 | Best: 8.68412
+2104.4s	138	
+2104.4s	139	TRIAL 48 | RMSE: 8.76117 | Best: 8.68412
+2146.7s	140	
+2146.7s	141	TRIAL 49 | RMSE: 8.68843 | Best: 8.68412
+2175.1s	142	
+2175.1s	143	TRIAL 50 | RMSE: 8.73355 | Best: 8.68412
+2220.5s	144	
+2220.5s	145	TRIAL 51 | RMSE: 8.68454 | Best: 8.68412
+2258.5s	146	
+2258.5s	147	TRIAL 52 | RMSE: 8.68667 | Best: 8.68412
+2294.0s	148	
+2294.0s	149	TRIAL 53 | RMSE: 8.68733 | Best: 8.68412
+2333.3s	150	
+2333.3s	151	TRIAL 54 | RMSE: 8.69088 | Best: 8.68412
+2372.9s	152	
+2372.9s	153	TRIAL 55 | RMSE: 8.68565 | Best: 8.68412
+2425.4s	154	
+2425.4s	155	TRIAL 56 | RMSE: 8.68606 | Best: 8.68412
+2472.9s	156	
+2472.9s	157	TRIAL 57 | RMSE: 8.68576 | Best: 8.68412
+2512.5s	158	
+2512.5s	159	TRIAL 58 | RMSE: 8.69309 | Best: 8.68412
+2558.7s	160	
+2558.7s	161	TRIAL 59 | RMSE: 8.68533 | Best: 8.68412
+2604.5s	162	
+2604.5s	163	TRIAL 60 | RMSE: 8.68693 | Best: 8.68412
+2647.5s	164	
+2647.5s	165	TRIAL 61 | RMSE: 8.68530 | Best: 8.68412
+2682.9s	166	
+2682.9s	167	TRIAL 62 | RMSE: 8.68677 | Best: 8.68412
+2726.9s	168	
+2726.9s	169	TRIAL 63 | RMSE: 8.68608 | Best: 8.68412
+2766.3s	170	
+2766.3s	171	TRIAL 64 | RMSE: 8.69117 | Best: 8.68412
+2808.0s	172	
+2808.0s	173	TRIAL 65 | RMSE: 8.68631 | Best: 8.68412
+2845.3s	174	
+2845.3s	175	TRIAL 66 | RMSE: 8.68704 | Best: 8.68412
+2886.7s	176	
+2886.7s	177	TRIAL 67 | RMSE: 8.68647 | Best: 8.68412
+2934.5s	178	
+2934.5s	179	TRIAL 68 | RMSE: 8.68745 | Best: 8.68412
+2966.6s	180	
+2966.6s	181	TRIAL 69 | RMSE: 8.68980 | Best: 8.68412
+3009.9s	182	
+3009.9s	183	TRIAL 70 | RMSE: 8.68569 | Best: 8.68412
+3053.1s	184	
+3053.1s	185	TRIAL 71 | RMSE: 8.68505 | Best: 8.68412
+3098.2s	186	
+3098.2s	187	TRIAL 72 | RMSE: 8.68559 | Best: 8.68412
+3144.4s	188	
+3144.4s	189	TRIAL 73 | RMSE: 8.68516 | Best: 8.68412
+3189.6s	190	
+3189.6s	191	TRIAL 74 | RMSE: 8.68495 | Best: 8.68412
+3236.0s	192	
+3236.0s	193	TRIAL 75 | RMSE: 8.68790 | Best: 8.68412
+3283.8s	194	
+3283.8s	195	TRIAL 76 | RMSE: 8.68485 | Best: 8.68412
+3331.5s	196	
+3331.5s	197	TRIAL 77 | RMSE: 8.68437 | Best: 8.68412
+3379.3s	198	
+3379.3s	199	TRIAL 78 | RMSE: 8.68507 | Best: 8.68412
+3427.7s	200	
+3427.7s	201	TRIAL 79 | RMSE: 8.68926 | Best: 8.68412
+3467.4s	202	
+3467.4s	203	TRIAL 80 | RMSE: 8.69562 | Best: 8.68412
+3515.2s	204	
+3515.2s	205	TRIAL 81 | RMSE: 8.68559 | Best: 8.68412
+3562.9s	206	
+3562.9s	207	TRIAL 82 | RMSE: 8.68585 | Best: 8.68412
+3609.2s	208	
+3609.2s	209	TRIAL 83 | RMSE: 8.68456 | Best: 8.68412
+3656.8s	210	
+3656.8s	211	TRIAL 84 | RMSE: 8.68488 | Best: 8.68412
+3702.1s	212	
+3702.1s	213	TRIAL 85 | RMSE: 8.69042 | Best: 8.68412
+3747.8s	214	
+3747.8s	215	TRIAL 86 | RMSE: 8.68691 | Best: 8.68412
+3795.8s	216	
+3795.8s	217	TRIAL 87 | RMSE: 8.68614 | Best: 8.68412
+3839.9s	218	
+3839.9s	219	TRIAL 88 | RMSE: 8.68632 | Best: 8.68412
+3879.6s	220	
+3879.6s	221	TRIAL 89 | RMSE: 8.69477 | Best: 8.68412
+3926.3s	222	
+3926.3s	223	TRIAL 90 | RMSE: 8.68523 | Best: 8.68412
+3973.9s	224	
+3973.9s	225	TRIAL 91 | RMSE: 8.68509 | Best: 8.68412
+4021.3s	226	
+4021.3s	227	TRIAL 92 | RMSE: 8.68519 | Best: 8.68412
+4068.6s	228	
+4068.6s	229	TRIAL 93 | RMSE: 8.68497 | Best: 8.68412
+4112.1s	230	
+4112.1s	231	TRIAL 94 | RMSE: 8.68601 | Best: 8.68412
+4159.5s	232	
+4159.5s	233	TRIAL 95 | RMSE: 8.68568 | Best: 8.68412
+4201.3s	234	
+4201.3s	235	TRIAL 96 | RMSE: 8.68525 | Best: 8.68412
+4248.6s	236	
+4248.6s	237	TRIAL 97 | RMSE: 8.68513 | Best: 8.68412
+4296.2s	238	
+4296.2s	239	TRIAL 98 | RMSE: 8.68700 | Best: 8.68412
+4333.7s	240	
+4333.7s	241	TRIAL 99 | RMSE: 8.68812 | Best: 8.68412
+4379.4s	242	
+4379.4s	243	TRIAL 100 | RMSE: 8.68507 | Best: 8.68412
+4427.0s	244	
+4427.0s	245	TRIAL 101 | RMSE: 8.68495 | Best: 8.68412
+4475.0s	246	
+4475.0s	247	TRIAL 102 | RMSE: 8.68717 | Best: 8.68412
+4522.6s	248	
+4522.6s	249	TRIAL 103 | RMSE: 8.68619 | Best: 8.68412
+4570.1s	250	
+4570.1s	251	TRIAL 104 | RMSE: 8.68461 | Best: 8.68412
+4616.1s	252	
+4616.1s	253	TRIAL 105 | RMSE: 8.68473 | Best: 8.68412
+4663.7s	254	
+4663.7s	255	TRIAL 106 | RMSE: 8.68447 | Best: 8.68412
+4709.7s	256	
+4709.7s	257	TRIAL 107 | RMSE: 8.68444 | Best: 8.68412
+4757.3s	258	
+4757.3s	259	TRIAL 108 | RMSE: 8.68505 | Best: 8.68412
+4796.6s	260	
+4796.6s	261	TRIAL 109 | RMSE: 8.69246 | Best: 8.68412
+4844.8s	262	
+4844.8s	263	TRIAL 110 | RMSE: 8.68766 | Best: 8.68412
+4892.8s	264	
+4892.8s	265	TRIAL 111 | RMSE: 8.68796 | Best: 8.68412
+4938.6s	266	
+4938.6s	267	TRIAL 112 | RMSE: 8.68415 | Best: 8.68412
+4984.9s	268	
+4984.9s	269	TRIAL 113 | RMSE: 8.68551 | Best: 8.68412
+5026.6s	270	
+5026.6s	271	TRIAL 114 | RMSE: 8.68508 | Best: 8.68412
+5071.6s	272	
+5071.6s	273	TRIAL 115 | RMSE: 8.68600 | Best: 8.68412
+5119.1s	274	
+5119.1s	275	TRIAL 116 | RMSE: 8.68587 | Best: 8.68412
+5155.1s	276	
+5155.1s	277	TRIAL 117 | RMSE: 8.68952 | Best: 8.68412
+5203.0s	278	
+5203.0s	279	TRIAL 118 | RMSE: 8.68578 | Best: 8.68412
+5250.7s	280	
+5250.7s	281	TRIAL 119 | RMSE: 8.68508 | Best: 8.68412
+5280.5s	282	
+5280.5s	283	TRIAL 120 | RMSE: 8.68848 | Best: 8.68412
+5325.8s	284	
+5325.8s	285	TRIAL 121 | RMSE: 8.69098 | Best: 8.68412
+5372.7s	286	
+5372.7s	287	TRIAL 122 | RMSE: 8.68461 | Best: 8.68412
+5417.4s	288	
+5417.4s	289	TRIAL 123 | RMSE: 8.68502 | Best: 8.68412
+5465.1s	290	
+5465.1s	291	TRIAL 124 | RMSE: 8.68656 | Best: 8.68412
+5511.5s	292	
+5511.5s	293	TRIAL 125 | RMSE: 8.68528 | Best: 8.68412
+5558.3s	294	
+5558.3s	295	TRIAL 126 | RMSE: 8.68454 | Best: 8.68412
+5586.9s	296	
+5586.9s	297	TRIAL 127 | RMSE: 8.73096 | Best: 8.68412
+5627.5s	299	
+5627.5s	300	TRIAL 128 | RMSE: 8.68716 | Best: 8.68412
+5670.5s	301	
+5670.5s	302	TRIAL 129 | RMSE: 8.68594 | Best: 8.68412
+5713.5s	303	
+5713.5s	304	TRIAL 130 | RMSE: 8.68576 | Best: 8.68412
+5758.7s	305	
+5758.7s	306	TRIAL 131 | RMSE: 8.68467 | Best: 8.68412
+5804.5s	307	
+5804.5s	308	TRIAL 132 | RMSE: 8.68483 | Best: 8.68412
+5851.6s	309	
+5851.6s	310	TRIAL 133 | RMSE: 8.68487 | Best: 8.68412
+5897.3s	311	
+5897.3s	312	TRIAL 134 | RMSE: 8.68573 | Best: 8.68412
+5943.5s	313	
+5943.5s	314	TRIAL 135 | RMSE: 8.68556 | Best: 8.68412
+5986.1s	315	
+5986.1s	316	TRIAL 136 | RMSE: 8.68543 | Best: 8.68412
+6032.4s	317	
+6032.4s	318	TRIAL 137 | RMSE: 8.68467 | Best: 8.68412
+6080.0s	319	
+6080.0s	320	TRIAL 138 | RMSE: 8.68508 | Best: 8.68412
+6125.6s	321	
+6125.6s	322	TRIAL 139 | RMSE: 8.68572 | Best: 8.68412
+6167.7s	323	
+6167.7s	324	TRIAL 140 | RMSE: 8.68562 | Best: 8.68412
+6214.5s	325	
+6214.5s	326	TRIAL 141 | RMSE: 8.68451 | Best: 8.68412
+6261.4s	327	
+6261.4s	328	TRIAL 142 | RMSE: 8.68516 | Best: 8.68412
+6307.1s	329	
+6307.1s	330	TRIAL 143 | RMSE: 8.68493 | Best: 8.68412
+6350.2s	331	
+6350.2s	332	TRIAL 144 | RMSE: 8.68581 | Best: 8.68412
+6396.2s	333	
+6396.2s	334	TRIAL 145 | RMSE: 8.68559 | Best: 8.68412
+6442.6s	335	
+6442.6s	336	TRIAL 146 | RMSE: 8.68517 | Best: 8.68412
+6490.3s	337	
+6490.3s	338	TRIAL 147 | RMSE: 8.68493 | Best: 8.68412
+6535.2s	339	
+6535.2s	340	TRIAL 148 | RMSE: 8.68484 | Best: 8.68412
+6582.9s	341	
+6582.9s	342	TRIAL 149 | RMSE: 8.68520 | Best: 8.68412
+6629.1s	343	
+6629.1s	344	TRIAL 150 | RMSE: 8.68514 | Best: 8.68412
+6676.9s	345	
+6676.9s	346	TRIAL 151 | RMSE: 8.68528 | Best: 8.68412
+6723.4s	347	
+6723.4s	348	TRIAL 152 | RMSE: 8.68423 | Best: 8.68412
+6771.0s	349	
+6771.0s	350	TRIAL 153 | RMSE: 8.68436 | Best: 8.68412
+6818.7s	351	
+6818.7s	352	TRIAL 154 | RMSE: 8.68548 | Best: 8.68412
+6865.3s	353	
+6865.3s	354	TRIAL 155 | RMSE: 8.68486 | Best: 8.68412
+6909.8s	355	
+6909.8s	356	TRIAL 156 | RMSE: 8.68572 | Best: 8.68412
+6957.5s	357	
+6957.5s	358	TRIAL 157 | RMSE: 8.68575 | Best: 8.68412
+7000.2s	359	
+7000.2s	360	TRIAL 158 | RMSE: 8.68534 | Best: 8.68412
+7032.5s	361	
+7032.5s	362	TRIAL 159 | RMSE: 8.68851 | Best: 8.68412
+7080.7s	363	
+7080.7s	364	TRIAL 160 | RMSE: 8.68542 | Best: 8.68412
+7128.4s	365	
+7128.4s	366	TRIAL 161 | RMSE: 8.68507 | Best: 8.68412
+7175.2s	367	
+7175.2s	368	TRIAL 162 | RMSE: 8.68526 | Best: 8.68412
+7220.5s	369	
+7220.5s	370	TRIAL 163 | RMSE: 8.68446 | Best: 8.68412
+7264.6s	371	
+7264.6s	372	TRIAL 164 | RMSE: 8.68519 | Best: 8.68412
+7311.5s	373	
+7311.5s	374	TRIAL 165 | RMSE: 8.68475 | Best: 8.68412
+7356.1s	375	
+7356.1s	376	TRIAL 166 | RMSE: 8.68516 | Best: 8.68412
+7401.9s	377	
+7401.9s	378	TRIAL 167 | RMSE: 8.68549 | Best: 8.68412
+7445.1s	379	
+7445.1s	380	TRIAL 168 | RMSE: 8.68560 | Best: 8.68412
+7487.2s	381	
+7487.2s	382	TRIAL 169 | RMSE: 8.68606 | Best: 8.68412
+7532.9s	383	
+7532.9s	384	TRIAL 170 | RMSE: 8.68961 | Best: 8.68412
+7580.6s	385	
+7580.6s	386	TRIAL 171 | RMSE: 8.68493 | Best: 8.68412
+7627.2s	387	
+7627.2s	388	TRIAL 172 | RMSE: 8.68503 | Best: 8.68412
+7674.8s	389	
+7674.8s	390	TRIAL 173 | RMSE: 8.68473 | Best: 8.68412
+7719.5s	391	
+7719.5s	392	TRIAL 174 | RMSE: 8.68545 | Best: 8.68412
+7767.4s	393	
+7767.4s	394	TRIAL 175 | RMSE: 8.68494 | Best: 8.68412
+7811.3s	395	
+7811.3s	396	TRIAL 176 | RMSE: 8.68493 | Best: 8.68412
+7858.9s	397	
+7858.9s	398	TRIAL 177 | RMSE: 8.68523 | Best: 8.68412
+7899.3s	399	
+7899.3s	400	TRIAL 178 | RMSE: 8.68625 | Best: 8.68412
+7943.2s	401	
+7943.2s	402	TRIAL 179 | RMSE: 8.68503 | Best: 8.68412
+7989.5s	403	
+7989.5s	404	TRIAL 180 | RMSE: 8.68564 | Best: 8.68412
+8037.3s	405	
+8037.3s	406	TRIAL 181 | RMSE: 8.68441 | Best: 8.68412
+8084.6s	407	
+8084.6s	408	TRIAL 182 | RMSE: 8.68489 | Best: 8.68412
+8132.4s	409	
+8132.4s	410	TRIAL 183 | RMSE: 8.68485 | Best: 8.68412
+8180.1s	411	
+8180.1s	412	TRIAL 184 | RMSE: 8.68487 | Best: 8.68412
+8227.9s	413	
+8227.9s	414	TRIAL 185 | RMSE: 8.68546 | Best: 8.68412
+8274.2s	415	
+8274.2s	416	TRIAL 186 | RMSE: 8.68516 | Best: 8.68412
+8320.7s	417	
+8320.7s	418	TRIAL 187 | RMSE: 8.68476 | Best: 8.68412
+8365.0s	419	
+8365.0s	420	TRIAL 188 | RMSE: 8.68560 | Best: 8.68412
+8411.4s	421	
+8411.4s	422	TRIAL 189 | RMSE: 8.68505 | Best: 8.68412
+8444.9s	423	
+8444.9s	424	TRIAL 190 | RMSE: 8.70786 | Best: 8.68412
+8492.6s	425	
+8492.6s	426	🏆 TRIAL 191 | RMSE: 8.68393 | Best: 8.68393
+8492.6s	427	NEW BEST PARAMS:
+8492.6s	428	  learning_rate: 0.017480
+8492.6s	429	  max_depth: 6
+8492.6s	430	  min_child_weight: 43
+8492.6s	431	  subsample: 0.897392
+8492.6s	432	  colsample_bytree: 0.501382
+8492.6s	433	  reg_lambda: 1.663450
+8492.6s	434	  reg_alpha: 0.127538
+8540.2s	435	
+8540.2s	436	TRIAL 192 | RMSE: 8.68475 | Best: 8.68393
+8587.9s	437	
+8587.9s	438	TRIAL 193 | RMSE: 8.68447 | Best: 8.68393
+8635.4s	439	
+8635.4s	440	TRIAL 194 | RMSE: 8.68404 | Best: 8.68393
+8681.2s	441	
+8681.2s	442	TRIAL 195 | RMSE: 8.68504 | Best: 8.68393
+8728.9s	443	
+8728.9s	444	TRIAL 196 | RMSE: 8.68520 | Best: 8.68393
+8771.6s	445	
+8771.6s	446	TRIAL 197 | RMSE: 8.68480 | Best: 8.68393
+8816.9s	447	
+8816.9s	448	TRIAL 198 | RMSE: 8.68877 | Best: 8.68393
+8861.9s	449	
+8861.9s	450	TRIAL 199 | RMSE: 8.68519 | Best: 8.68393
+8861.9s	451	
+8861.9s	452	======================================================================
+8861.9s	453	OPTUNA COMPLETE
+8861.9s	454	======================================================================
+8861.9s	455	Time: 2.46 hours
+8861.9s	456	Trials: 200
+8861.9s	457	Best RMSE (2-fold): 8.68393
+8861.9s	458	
+8861.9s	459	BEST PARAMS:
+8861.9s	460	  learning_rate: 0.017480
+8861.9s	461	  max_depth: 6
+8861.9s	462	  min_child_weight: 43
+8861.9s	463	  subsample: 0.897392
+8861.9s	464	  colsample_bytree: 0.501382
+8861.9s	465	  reg_lambda: 1.663450
+8861.9s	466	  reg_alpha: 0.127538
+8861.9s	467	
+8861.9s	468	--- Final Training (5-fold CV) ---
+8861.9s	469	
+8861.9s	470	Fold 1/5...
+8863.4s	471	[0]	validation_0-rmse:18.62905
+8868.5s	472	[500]	validation_0-rmse:8.73685
+8872.9s	473	[1000]	validation_0-rmse:8.69860
+8877.2s	474	[1500]	validation_0-rmse:8.68041
+8881.4s	475	[2000]	validation_0-rmse:8.67085
+8885.7s	476	[2500]	validation_0-rmse:8.66436
+8889.9s	477	[3000]	validation_0-rmse:8.66073
+8894.2s	478	[3500]	validation_0-rmse:8.65846
+8898.5s	479	[4000]	validation_0-rmse:8.65730
+8902.9s	480	[4500]	validation_0-rmse:8.65709
+8905.6s	481	[4809]	validation_0-rmse:8.65683
+8907.4s	482	RMSE: 8.65669 | Best Iter: 4610
+8907.4s	483	
+8907.4s	484	Fold 2/5...
+8908.7s	485	[0]	validation_0-rmse:18.67249
+8913.8s	486	[500]	validation_0-rmse:8.74642
+8918.2s	487	[1000]	validation_0-rmse:8.70741
+8922.4s	488	[1500]	validation_0-rmse:8.68768
+8926.7s	489	[2000]	validation_0-rmse:8.67695
+8930.9s	490	[2500]	validation_0-rmse:8.66992
+8935.2s	491	[3000]	validation_0-rmse:8.66534
+8939.5s	492	[3500]	validation_0-rmse:8.66272
+8943.8s	493	[4000]	validation_0-rmse:8.66113
+8948.2s	494	[4500]	validation_0-rmse:8.65993
+8952.5s	495	[5000]	validation_0-rmse:8.65954
+8955.3s	496	[5316]	validation_0-rmse:8.65950
+8957.1s	497	RMSE: 8.65941 | Best Iter: 5117
+8957.1s	498	
+8957.1s	499	Fold 3/5...
+8958.4s	500	[0]	validation_0-rmse:18.67804
+8963.5s	501	[500]	validation_0-rmse:8.73554
+8967.8s	502	[1000]	validation_0-rmse:8.69698
+8972.1s	503	[1500]	validation_0-rmse:8.67748
+8976.3s	504	[2000]	validation_0-rmse:8.66680
+8980.6s	505	[2500]	validation_0-rmse:8.66056
+8984.9s	506	[3000]	validation_0-rmse:8.65667
+8989.2s	507	[3500]	validation_0-rmse:8.65488
+8993.5s	508	[4000]	validation_0-rmse:8.65378
+8997.8s	509	[4500]	validation_0-rmse:8.65345
+8999.1s	510	[4647]	validation_0-rmse:8.65337
+9000.9s	511	RMSE: 8.65327 | Best Iter: 4447
+9000.9s	512	
+9000.9s	513	Fold 4/5...
+9002.3s	514	[0]	validation_0-rmse:18.73822
+9007.3s	515	[500]	validation_0-rmse:8.75190
+9011.7s	516	[1000]	validation_0-rmse:8.71184
+9016.0s	517	[1500]	validation_0-rmse:8.69155
+9020.2s	518	[2000]	validation_0-rmse:8.68047
+9024.5s	519	[2500]	validation_0-rmse:8.67351
+9028.8s	520	[3000]	validation_0-rmse:8.66893
+9033.1s	521	[3500]	validation_0-rmse:8.66626
+9037.4s	522	[4000]	validation_0-rmse:8.66457
+9041.8s	523	[4500]	validation_0-rmse:8.66360
+9046.1s	524	[5000]	validation_0-rmse:8.66305
+9050.5s	525	[5500]	validation_0-rmse:8.66300
+9050.9s	526	[5540]	validation_0-rmse:8.66305
+9052.7s	527	RMSE: 8.66283 | Best Iter: 5341
+9052.7s	528	
+9052.7s	529	Fold 5/5...
+9054.0s	530	[0]	validation_0-rmse:18.71462
+9059.0s	531	[500]	validation_0-rmse:8.76979
+9063.4s	532	[1000]	validation_0-rmse:8.72844
+9067.7s	533	[1500]	validation_0-rmse:8.70961
+9071.9s	534	[2000]	validation_0-rmse:8.69917
+9076.2s	535	[2500]	validation_0-rmse:8.69303
+9080.4s	536	[3000]	validation_0-rmse:8.68947
+9084.7s	537	[3500]	validation_0-rmse:8.68704
+9089.0s	538	[4000]	validation_0-rmse:8.68562
+9093.4s	539	[4500]	validation_0-rmse:8.68478
+9097.2s	540	[4931]	validation_0-rmse:8.68460
+9099.0s	541	RMSE: 8.68454 | Best Iter: 4731
+9099.0s	542	
+9099.0s	543	======================================================================
+9099.0s	544	FINAL RESULTS
+9099.0s	545	======================================================================
+9099.0s	546	CV RMSEs: ['8.65669', '8.65941', '8.65327', '8.66283', '8.68454']
+9099.0s	547	Mean CV: 8.66335 ± 0.01105
+9099.0s	548	OOF RMSE: 8.66336
+9099.0s	549	
+9099.0s	550	Benchmarks:
+9099.0s	551	  V6 LightGBM: OOF 8.67626 | LB 8.62597
+9099.0s	552	  V7 XGBoost:  OOF 8.67466 | LB 8.62953
+9099.5s	553	
+9099.5s	554	✓ Saved: submission_v8.csv
+9100.5s	555	✓ Saved: oof_v8.csv
+9100.5s	556	
+9100.5s	557	TOP 10 TRIALS:
+9100.5s	558	     number     value  params_colsample_bytree  params_learning_rate  params_max_depth  params_min_child_weight  params_reg_alpha  params_reg_lambda  params_subsample
+9100.5s	559	191     191  8.683930                 0.501382              0.017480                 6                       43          0.127538           1.663450          0.897392
+9100.5s	560	194     194  8.684041                 0.516336              0.018720                 6                       41          0.157055           1.764110          0.897907
+9100.5s	561	10       10  8.684115                 0.506147              0.017842                 6                       49          0.001110           0.625297          0.879687
+9100.5s	562	112     112  8.684146                 0.517418              0.019002                 6                       45          0.002862           3.604863          0.860438
+9100.5s	563	152     152  8.684226                 0.516110              0.017447                 6                       45          0.076728           1.239896          0.857707
+9100.5s	564	153     153  8.684357                 0.516703              0.017292                 6                       44          0.059983           1.032455          0.859648
+9100.5s	565	77       77  8.684374                 0.510467              0.017146                 6                       48          0.001043           1.375569          0.862489
+9100.5s	566	181     181  8.684410                 0.506701              0.017459                 6                       41          0.131550           1.676602          0.895975
+9100.5s	567	41       41  8.684424                 0.516139              0.020357                 6                       50          0.001362           0.574364          0.894193
+9100.5s	568	107     107  8.684443                 0.502105              0.018660                 6                       42          0.002403           2.314878          0.866798
+9100.5s	569	
+9100.5s	570	--- V8 Complete | OOF: 8.66336 ---

@@ -1,0 +1,491 @@
+Time    #   Log Message
+7.7s	1	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.7s	2	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.7s	3	0.00s - to python to disable frozen modules.
+7.7s	4	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.3s	5	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.3s	6	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.3s	7	0.00s - to python to disable frozen modules.
+8.3s	8	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+15.5s	9	Installing skorch...
+17.6s	10	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 268.5/268.5 kB 6.9 MB/s eta 0:00:00
+17.8s	11	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 268.5/268.5 kB 6.9 MB/s eta 0:00:00
+20.2s	12	Installing pytabkit...
+21.6s	13	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 364.1/364.1 kB 7.7 MB/s eta 0:00:00
+21.8s	14	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 364.1/364.1 kB 7.7 MB/s eta 0:00:00
+35.8s	15	======================================================================
+35.8s	16	V27 FT-Transformer (Feature Tokenizer Transformer)
+35.8s	17	======================================================================
+35.8s	18	Device: cuda
+37.9s	19	Train: (630000, 13), Test: (270000, 12), Orig: (20000, 13)
+37.9s	20	
+37.9s	21	Feature Engineering (Dual Representation)...
+40.0s	22	11 Categories, 9 Numerics
+40.0s	23	
+40.0s	24	Preprocessing...
+42.6s	25	
+42.6s	26	======================================================================
+42.6s	27	Training FT-Transformer (10-Fold CV)
+42.6s	28	======================================================================
+42.6s	29	
+42.6s	30	--- Fold 1/10 ---
+43.5s	31	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+43.5s	32	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+46.1s	33	RTDL regressor
+46.9s	34	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab4abb24410>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4ab96d910>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4ab96f440>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab4abceec60>)]
+46.9s	35	Initializing UniquePrefixCheckpoint
+46.9s	36	fn_prefix is 134916059812528
+47.7s	37	self.category_embeddings.weight.shape=torch.Size([1514, 192])
+89.5s	38	A checkpoint was triggered in epoch 2.
+89.5s	39	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+89.5s	40	-------  ------------------  ------------  ------------  ----  -------
+89.5s	41	      1              [36m0.9937[0m        [32m0.2246[0m        [35m0.2151[0m     +  41.8251
+131.6s	42	A checkpoint was triggered in epoch 3.
+131.6s	43	      2              0.9937        [32m0.2153[0m        [35m0.2086[0m     +  42.0157
+174.8s	44	      3              0.9937        [32m0.2131[0m        0.2087        43.2038
+217.8s	45	A checkpoint was triggered in epoch 5.
+217.8s	46	      4              0.9937        [32m0.2116[0m        [35m0.2075[0m     +  43.0342
+260.9s	47	A checkpoint was triggered in epoch 6.
+260.9s	48	      5              0.9937        [32m0.2105[0m        [35m0.2072[0m     +  43.0446
+304.0s	49	A checkpoint was triggered in epoch 7.
+304.0s	50	      6              0.9937        [32m0.2096[0m        [35m0.2071[0m     +  43.1298
+347.1s	51	      7              0.9937        [32m0.2089[0m        0.2075        43.0806
+390.3s	52	A checkpoint was triggered in epoch 9.
+390.3s	53	      8              0.9937        [32m0.2082[0m        [35m0.2070[0m     +  43.1049
+433.3s	54	      9              0.9937        [32m0.2075[0m        0.2077        43.0689
+476.4s	55	     10              0.9937        [32m0.2068[0m        0.2072        43.0956
+519.5s	56	A checkpoint was triggered in epoch 12.
+519.5s	57	     11              0.9937        [32m0.2060[0m        [35m0.2069[0m     +  43.0273
+562.6s	58	     12              0.9937        [32m0.2054[0m        0.2079        43.1176
+605.8s	59	A checkpoint was triggered in epoch 14.
+605.8s	60	     13              0.9937        [32m0.2046[0m        [35m0.2068[0m     +  43.1442
+648.9s	61	     14              0.9937        [32m0.2039[0m        0.2084        43.1071
+692.0s	62	     15              0.9937        [32m0.2031[0m        0.2091        43.1103
+735.1s	63	     16              0.9937        [32m0.2021[0m        0.2081        43.0612
+778.1s	64	     17              0.9937        [32m0.2012[0m        0.2092        43.0733
+821.3s	65	     18              0.9937        [32m0.2003[0m        0.2111        43.1249
+864.3s	66	     19              0.9937        [32m0.1994[0m        0.2113        43.0725
+907.5s	67	     20              0.9937        [32m0.1985[0m        0.2109        43.1281
+950.6s	68	     21              0.9937        [32m0.1973[0m        0.2121        43.1067
+993.6s	69	     22              0.9937        [32m0.1963[0m        0.2114        43.0590
+1037.1s	70	     23              0.9937        [32m0.1953[0m        0.2124        43.4112
+1080.2s	71	     24              0.9937        [32m0.1942[0m        0.2135        43.1269
+1123.4s	72	     25              0.9937        [32m0.1932[0m        0.2144        43.2009
+1166.5s	73	     26              0.9937        [32m0.1919[0m        0.2157        43.0778
+1209.6s	74	     27              0.9937        [32m0.1908[0m        0.2164        43.0964
+1252.7s	75	     28              0.9937        [32m0.1896[0m        0.2176        43.1407
+1295.8s	76	train end
+1295.8s	77	Loading best checkpoint after training.
+1295.8s	78	removing ./rtdl_checkpoints/134916059812528params.pt
+1306.8s	79	Fold 1 RMSE: 8.60254
+1307.0s	80	
+1307.0s	81	--- Fold 2/10 ---
+1307.8s	82	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+1307.8s	83	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+1310.2s	84	RTDL regressor
+1310.9s	85	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab4ada14b60>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d206e0>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d23ad0>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d23dd0>)]
+1310.9s	86	Initializing UniquePrefixCheckpoint
+1310.9s	87	fn_prefix is 134916059825216
+1311.5s	88	self.category_embeddings.weight.shape=torch.Size([1516, 192])
+1354.9s	89	A checkpoint was triggered in epoch 2.
+1354.9s	90	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+1354.9s	91	-------  ------------------  ------------  ------------  ----  -------
+1354.9s	92	      1              [36m0.9942[0m        [32m0.2252[0m        [35m0.2156[0m     +  43.3126
+1398.1s	93	A checkpoint was triggered in epoch 3.
+1398.1s	94	      2              0.9942        [32m0.2154[0m        [35m0.2124[0m     +  43.2426
+1441.3s	95	A checkpoint was triggered in epoch 4.
+1441.3s	96	      3              0.9942        [32m0.2128[0m        [35m0.2115[0m     +  43.1583
+1484.4s	97	A checkpoint was triggered in epoch 5.
+1484.4s	98	      4              0.9942        [32m0.2116[0m        [35m0.2093[0m     +  43.0983
+1527.6s	99	      5              0.9942        [32m0.2103[0m        0.2112        43.1957
+1570.8s	100	      6              0.9942        [32m0.2094[0m        0.2096        43.1664
+1614.1s	101	A checkpoint was triggered in epoch 8.
+1614.1s	102	      7              0.9942        [32m0.2085[0m        [35m0.2091[0m     +  43.2880
+1657.4s	103	      8              0.9942        [32m0.2080[0m        0.2095        43.2582
+1700.4s	104	      9              0.9942        [32m0.2072[0m        0.2096        43.0187
+1743.4s	105	     10              0.9942        [32m0.2066[0m        0.2093        43.0376
+1786.5s	106	     11              0.9942        [32m0.2059[0m        0.2098        43.0755
+1829.6s	107	     12              0.9942        [32m0.2052[0m        0.2099        43.0778
+1872.7s	108	     13              0.9942        [32m0.2045[0m        0.2106        43.0664
+1915.8s	109	     14              0.9942        [32m0.2038[0m        0.2113        43.0886
+1958.8s	110	     15              0.9942        [32m0.2029[0m        0.2105        43.0784
+2001.9s	111	     16              0.9942        [32m0.2023[0m        0.2106        43.0624
+2044.9s	112	     17              0.9942        [32m0.2012[0m        0.2126        43.0082
+2088.1s	113	     18              0.9942        [32m0.2003[0m        0.2117        43.1467
+2131.1s	114	     19              0.9942        [32m0.1994[0m        0.2126        43.0569
+2174.3s	115	     20              0.9942        [32m0.1984[0m        0.2137        43.1157
+2217.6s	116	     21              0.9942        [32m0.1972[0m        0.2138        43.3196
+2260.7s	117	     22              0.9942        [32m0.1963[0m        0.2154        43.0964
+2303.9s	118	train end
+2303.9s	119	Loading best checkpoint after training.
+2303.9s	120	removing ./rtdl_checkpoints/134916059825216params.pt
+2314.9s	121	Fold 2 RMSE: 8.65072
+2315.1s	122	
+2315.1s	123	--- Fold 3/10 ---
+2315.9s	124	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+2315.9s	125	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+2318.3s	126	RTDL regressor
+2319.0s	127	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab4abbf45c0>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4cd8bcfe0>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4abc44620>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab4aef7f590>)]
+2319.0s	128	Initializing UniquePrefixCheckpoint
+2319.0s	129	fn_prefix is 134916059768704
+2319.5s	130	self.category_embeddings.weight.shape=torch.Size([1516, 192])
+2363.3s	131	A checkpoint was triggered in epoch 2.
+2363.3s	132	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+2363.3s	133	-------  ------------------  ------------  ------------  ----  -------
+2363.3s	134	      1              [36m0.9990[0m        [32m0.2250[0m        [35m0.2166[0m     +  43.7206
+2406.5s	135	A checkpoint was triggered in epoch 3.
+2406.5s	136	      2              0.9990        [32m0.2155[0m        [35m0.2088[0m     +  43.1252
+2449.9s	137	A checkpoint was triggered in epoch 4.
+2449.9s	138	      3              0.9990        [32m0.2129[0m        [35m0.2074[0m     +  43.4598
+2493.4s	139	      4              0.9990        [32m0.2119[0m        0.2080        43.4506
+2536.7s	140	      5              0.9990        [32m0.2106[0m        0.2082        43.3312
+2580.0s	141	      6              0.9990        [32m0.2100[0m        0.2075        43.3073
+2623.5s	142	A checkpoint was triggered in epoch 8.
+2623.5s	143	      7              0.9990        [32m0.2089[0m        [35m0.2067[0m     +  43.4379
+2666.7s	144	      8              0.9990        [32m0.2084[0m        0.2069        43.1797
+2710.0s	145	      9              0.9990        [32m0.2077[0m        0.2070        43.3386
+2753.3s	146	     10              0.9990        [32m0.2071[0m        0.2087        43.3116
+2796.9s	147	     11              0.9990        [32m0.2062[0m        0.2077        43.5504
+2840.2s	148	     12              0.9990        [32m0.2057[0m        0.2082        43.3128
+2883.3s	149	     13              0.9990        [32m0.2050[0m        0.2083        43.1133
+2926.7s	150	     14              0.9990        [32m0.2041[0m        0.2088        43.3567
+2969.8s	151	     15              0.9990        [32m0.2033[0m        0.2085        43.0868
+3012.9s	152	     16              0.9990        [32m0.2025[0m        0.2093        43.0908
+3056.0s	153	     17              0.9990        [32m0.2016[0m        0.2093        43.1473
+3099.3s	154	     18              0.9990        [32m0.2007[0m        0.2111        43.2374
+3142.5s	155	     19              0.9990        [32m0.1995[0m        0.2115        43.1722
+3185.5s	156	     20              0.9990        [32m0.1987[0m        0.2106        43.0683
+3228.7s	157	     21              0.9990        [32m0.1976[0m        0.2117        43.1411
+3271.7s	158	     22              0.9990        [32m0.1965[0m        0.2121        43.0508
+3314.8s	159	train end
+3314.8s	160	Loading best checkpoint after training.
+3314.8s	161	removing ./rtdl_checkpoints/134916059768704params.pt
+3325.8s	162	Fold 3 RMSE: 8.60116
+3326.0s	163	
+3326.0s	164	--- Fold 4/10 ---
+3326.8s	165	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+3326.8s	166	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+3329.2s	167	RTDL regressor
+3330.2s	168	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab4ada14b60>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4ab96b080>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4ab968b30>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab4ab968a40>)]
+3330.2s	169	Initializing UniquePrefixCheckpoint
+3330.2s	170	fn_prefix is 134916059840192
+3330.6s	171	self.category_embeddings.weight.shape=torch.Size([1516, 192])
+3374.0s	172	A checkpoint was triggered in epoch 2.
+3374.0s	173	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+3374.0s	174	-------  ------------------  ------------  ------------  ----  -------
+3374.0s	175	      1              [36m0.9982[0m        [32m0.2250[0m        [35m0.2149[0m     +  43.3488
+3417.1s	176	A checkpoint was triggered in epoch 3.
+3417.1s	177	      2              0.9982        [32m0.2154[0m        [35m0.2137[0m     +  43.1119
+3460.3s	178	      3              0.9982        [32m0.2131[0m        0.2143        43.1595
+3503.4s	179	A checkpoint was triggered in epoch 5.
+3503.4s	180	      4              0.9982        [32m0.2116[0m        [35m0.2116[0m     +  43.0922
+3546.4s	181	      5              0.9982        [32m0.2107[0m        0.2170        43.0055
+3589.4s	182	A checkpoint was triggered in epoch 7.
+3589.4s	183	      6              0.9982        [32m0.2096[0m        [35m0.2108[0m     +  43.0309
+3632.5s	184	      7              0.9982        [32m0.2087[0m        0.2115        43.0979
+3675.6s	185	      8              0.9982        [32m0.2080[0m        0.2114        43.0616
+3718.6s	186	A checkpoint was triggered in epoch 10.
+3718.6s	187	      9              0.9982        [32m0.2073[0m        [35m0.2104[0m     +  42.9944
+3761.7s	188	A checkpoint was triggered in epoch 11.
+3761.7s	189	     10              0.9982        [32m0.2067[0m        [35m0.2097[0m     +  43.0451
+3804.7s	190	     11              0.9982        [32m0.2059[0m        0.2127        42.9911
+3847.6s	191	     12              0.9982        [32m0.2053[0m        0.2099        42.9656
+3890.6s	192	     13              0.9982        [32m0.2045[0m        0.2124        43.0000
+3933.7s	193	     14              0.9982        [32m0.2037[0m        0.2123        43.0829
+3976.7s	194	     15              0.9982        [32m0.2029[0m        0.2117        42.9766
+4019.7s	195	     16              0.9982        [32m0.2022[0m        0.2119        43.0005
+4062.9s	196	     17              0.9982        [32m0.2012[0m        0.2125        43.1362
+4105.9s	197	     18              0.9982        [32m0.2003[0m        0.2127        43.0564
+4149.0s	198	     19              0.9982        [32m0.1992[0m        0.2124        43.0344
+4192.0s	199	     20              0.9982        [32m0.1984[0m        0.2138        43.0249
+4235.0s	200	     21              0.9982        [32m0.1972[0m        0.2136        43.0351
+4278.1s	201	     22              0.9982        [32m0.1962[0m        0.2158        43.0137
+4321.1s	202	     23              0.9982        [32m0.1951[0m        0.2163        43.0088
+4364.1s	203	     24              0.9982        [32m0.1938[0m        0.2168        43.0726
+4407.2s	204	     25              0.9982        [32m0.1927[0m        0.2176        43.0703
+4450.3s	205	train end
+4450.3s	206	Loading best checkpoint after training.
+4450.3s	207	removing ./rtdl_checkpoints/134916059840192params.pt
+4461.3s	208	Fold 4 RMSE: 8.66272
+4461.5s	209	
+4461.5s	210	--- Fold 5/10 ---
+4462.3s	211	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+4462.3s	212	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+4464.7s	213	RTDL regressor
+4465.4s	214	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab497d3aea0>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d3af60>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d3ad50>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d3b7d0>)]
+4465.4s	215	Initializing UniquePrefixCheckpoint
+4465.4s	216	fn_prefix is 134916059935040
+4466.0s	217	self.category_embeddings.weight.shape=torch.Size([1516, 192])
+4509.3s	218	A checkpoint was triggered in epoch 2.
+4509.3s	219	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+4509.3s	220	-------  ------------------  ------------  ------------  ----  -------
+4509.3s	221	      1              [36m1.0002[0m        [32m0.2245[0m        [35m0.2223[0m     +  43.2595
+4552.3s	222	A checkpoint was triggered in epoch 3.
+4552.3s	223	      2              1.0002        [32m0.2153[0m        [35m0.2142[0m     +  43.0305
+4595.5s	224	A checkpoint was triggered in epoch 4.
+4595.5s	225	      3              1.0002        [32m0.2132[0m        [35m0.2103[0m     +  43.1060
+4638.5s	226	A checkpoint was triggered in epoch 5.
+4638.5s	227	      4              1.0002        [32m0.2117[0m        [35m0.2093[0m     +  43.0544
+4681.6s	228	      5              1.0002        [32m0.2106[0m        0.2107        43.0844
+4724.7s	229	A checkpoint was triggered in epoch 7.
+4724.7s	230	      6              1.0002        [32m0.2097[0m        [35m0.2086[0m     +  43.0851
+4767.8s	231	      7              1.0002        [32m0.2088[0m        0.2087        43.0832
+4810.9s	232	A checkpoint was triggered in epoch 9.
+4810.9s	233	      8              1.0002        [32m0.2082[0m        [35m0.2072[0m     +  43.0578
+4854.1s	234	A checkpoint was triggered in epoch 10.
+4854.1s	235	      9              1.0002        [32m0.2074[0m        [35m0.2065[0m     +  43.1450
+4897.2s	236	     10              1.0002        [32m0.2069[0m        0.2105        43.0927
+4940.3s	237	     11              1.0002        [32m0.2064[0m        0.2098        43.0899
+4983.4s	238	     12              1.0002        [32m0.2054[0m        0.2089        43.1712
+5026.5s	239	     13              1.0002        [32m0.2046[0m        0.2080        43.0583
+5069.5s	240	     14              1.0002        [32m0.2039[0m        0.2102        43.0467
+5112.6s	241	     15              1.0002        [32m0.2031[0m        0.2104        43.0834
+5155.8s	242	     16              1.0002        [32m0.2023[0m        0.2083        43.1302
+5199.1s	243	     17              1.0002        [32m0.2014[0m        0.2089        43.3466
+5242.3s	244	     18              1.0002        [32m0.2005[0m        0.2091        43.1391
+5285.3s	245	     19              1.0002        [32m0.1995[0m        0.2098        43.0036
+5328.3s	246	     20              1.0002        [32m0.1984[0m        0.2130        43.0473
+5371.4s	247	     21              1.0002        [32m0.1974[0m        0.2113        43.0276
+5414.4s	248	     22              1.0002        [32m0.1964[0m        0.2123        43.0357
+5457.5s	249	     23              1.0002        [32m0.1952[0m        0.2136        43.0554
+5500.4s	250	     24              1.0002        [32m0.1942[0m        0.2137        42.9697
+5543.5s	251	train end
+5543.5s	252	Loading best checkpoint after training.
+5543.5s	253	removing ./rtdl_checkpoints/134916059935040params.pt
+5554.5s	254	Fold 5 RMSE: 8.59706
+5554.7s	255	
+5554.7s	256	--- Fold 6/10 ---
+5555.5s	257	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+5555.5s	258	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+5557.8s	259	RTDL regressor
+5558.6s	260	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab497d1d6d0>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d1d910>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d390a0>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d3a4b0>)]
+5558.6s	261	Initializing UniquePrefixCheckpoint
+5558.6s	262	fn_prefix is 134916059935760
+5559.2s	263	self.category_embeddings.weight.shape=torch.Size([1517, 192])
+5602.5s	264	A checkpoint was triggered in epoch 2.
+5602.5s	265	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+5602.5s	266	-------  ------------------  ------------  ------------  ----  -------
+5602.5s	267	      1              [36m0.9982[0m        [32m0.2251[0m        [35m0.2129[0m     +  43.3001
+5645.5s	268	      2              0.9982        [32m0.2154[0m        0.2167        43.0283
+5688.6s	269	A checkpoint was triggered in epoch 4.
+5688.6s	270	      3              0.9982        [32m0.2133[0m        [35m0.2106[0m     +  43.0871
+5731.7s	271	      4              0.9982        [32m0.2117[0m        0.2148        43.1052
+5774.9s	272	A checkpoint was triggered in epoch 6.
+5774.9s	273	      5              0.9982        [32m0.2106[0m        [35m0.2096[0m     +  43.1760
+5818.1s	274	      6              0.9982        [32m0.2096[0m        0.2099        43.1752
+5861.3s	275	      7              0.9982        [32m0.2089[0m        0.2117        43.2047
+5904.6s	276	      8              0.9982        [32m0.2081[0m        0.2097        43.2695
+5948.1s	277	A checkpoint was triggered in epoch 10.
+5948.1s	278	      9              0.9982        [32m0.2075[0m        [35m0.2089[0m     +  43.5052
+5991.7s	279	     10              0.9982        [32m0.2068[0m        0.2101        43.5161
+6035.1s	280	     11              0.9982        [32m0.2062[0m        0.2093        43.4919
+6078.5s	281	     12              0.9982        [32m0.2055[0m        0.2106        43.3385
+6122.0s	282	     13              0.9982        [32m0.2047[0m        0.2094        43.5442
+6165.5s	283	     14              0.9982        [32m0.2039[0m        0.2101        43.4887
+6209.0s	284	     15              0.9982        [32m0.2031[0m        0.2097        43.4889
+6252.7s	285	     16              0.9982        [32m0.2021[0m        0.2098        43.6507
+6296.1s	286	     17              0.9982        [32m0.2014[0m        0.2116        43.4512
+6339.7s	287	     18              0.9982        [32m0.2005[0m        0.2119        43.5371
+6383.2s	288	     19              0.9982        [32m0.1995[0m        0.2123        43.5487
+6426.5s	289	     20              0.9982        [32m0.1984[0m        0.2130        43.2502
+6470.0s	290	     21              0.9982        [32m0.1974[0m        0.2132        43.4576
+6513.3s	291	     22              0.9982        [32m0.1962[0m        0.2151        43.3574
+6556.7s	292	     23              0.9982        [32m0.1953[0m        0.2152        43.3884
+6600.1s	293	     24              0.9982        [32m0.1942[0m        0.2150        43.3406
+6643.2s	294	train end
+6643.2s	295	Loading best checkpoint after training.
+6643.2s	296	removing ./rtdl_checkpoints/134916059935760params.pt
+6654.4s	297	Fold 6 RMSE: 8.64606
+6654.6s	298	
+6654.6s	299	--- Fold 7/10 ---
+6655.4s	300	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+6655.4s	301	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+6657.8s	302	RTDL regressor
+6658.9s	303	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab497d1e150>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4abcede20>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d23c80>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d23d40>)]
+6658.9s	304	Initializing UniquePrefixCheckpoint
+6658.9s	305	fn_prefix is 134916059840480
+6659.1s	306	self.category_embeddings.weight.shape=torch.Size([1515, 192])
+6702.9s	307	A checkpoint was triggered in epoch 2.
+6702.9s	308	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+6702.9s	309	-------  ------------------  ------------  ------------  ----  -------
+6702.9s	310	      1              [36m1.0070[0m        [32m0.2246[0m        [35m0.2177[0m     +  43.7043
+6746.6s	311	A checkpoint was triggered in epoch 3.
+6746.6s	312	      2              1.0070        [32m0.2154[0m        [35m0.2132[0m     +  43.7100
+6790.0s	313	A checkpoint was triggered in epoch 4.
+6790.0s	314	      3              1.0070        [32m0.2128[0m        [35m0.2112[0m     +  43.3604
+6833.4s	315	A checkpoint was triggered in epoch 5.
+6833.4s	316	      4              1.0070        [32m0.2116[0m        [35m0.2103[0m     +  43.4168
+6876.9s	317	      5              1.0070        [32m0.2103[0m        0.2120        43.4188
+6920.1s	318	      6              1.0070        [32m0.2094[0m        0.2105        43.2493
+6963.6s	319	      7              1.0070        [32m0.2086[0m        0.2105        43.4494
+7007.1s	320	      8              1.0070        [32m0.2079[0m        0.2108        43.4808
+7050.6s	321	A checkpoint was triggered in epoch 10.
+7050.6s	322	      9              1.0070        [32m0.2073[0m        [35m0.2096[0m     +  43.5095
+7093.9s	323	     10              1.0070        [32m0.2065[0m        0.2099        43.3403
+7137.5s	324	     11              1.0070        [32m0.2060[0m        0.2100        43.5197
+7181.1s	325	     12              1.0070        [32m0.2053[0m        0.2113        43.6173
+7224.6s	326	     13              1.0070        [32m0.2047[0m        0.2107        43.4604
+7267.8s	327	     14              1.0070        [32m0.2038[0m        0.2101        43.1982
+7310.9s	328	     15              1.0070        [32m0.2032[0m        0.2121        43.1426
+7354.1s	329	     16              1.0070        [32m0.2023[0m        0.2121        43.2417
+7397.1s	330	     17              1.0070        [32m0.2015[0m        0.2129        42.9264
+7440.1s	331	     18              1.0070        [32m0.2005[0m        0.2128        43.0238
+7483.1s	332	     19              1.0070        [32m0.1995[0m        0.2131        42.9868
+7526.1s	333	     20              1.0070        [32m0.1985[0m        0.2160        42.9927
+7569.1s	334	     21              1.0070        [32m0.1976[0m        0.2150        43.0490
+7612.3s	335	     22              1.0070        [32m0.1963[0m        0.2158        43.1819
+7655.5s	336	     23              1.0070        [32m0.1954[0m        0.2162        43.2051
+7698.6s	337	     24              1.0070        [32m0.1942[0m        0.2181        43.0809
+7741.8s	338	train end
+7741.8s	339	Loading best checkpoint after training.
+7741.8s	340	removing ./rtdl_checkpoints/134916059840480params.pt
+7752.7s	341	Fold 7 RMSE: 8.66062
+7753.0s	342	
+7753.0s	343	--- Fold 8/10 ---
+7753.7s	344	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+7753.7s	345	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+7756.1s	346	RTDL regressor
+7757.2s	347	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab497d1cb60>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d12f30>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d12f60>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d39d30>)]
+7757.2s	348	Initializing UniquePrefixCheckpoint
+7757.2s	349	fn_prefix is 134916059928608
+7757.4s	350	self.category_embeddings.weight.shape=torch.Size([1518, 192])
+7800.8s	351	A checkpoint was triggered in epoch 2.
+7800.8s	352	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+7800.8s	353	-------  ------------------  ------------  ------------  ----  -------
+7800.8s	354	      1              [36m1.0040[0m        [32m0.2252[0m        [35m0.2115[0m     +  43.3482
+7843.9s	355	A checkpoint was triggered in epoch 3.
+7843.9s	356	      2              1.0040        [32m0.2157[0m        [35m0.2099[0m     +  43.0760
+7887.1s	357	A checkpoint was triggered in epoch 4.
+7887.1s	358	      3              1.0040        [32m0.2134[0m        [35m0.2083[0m     +  43.2043
+7930.2s	359	A checkpoint was triggered in epoch 5.
+7930.2s	360	      4              1.0040        [32m0.2119[0m        [35m0.2082[0m     +  43.0309
+7973.2s	361	      5              1.0040        [32m0.2108[0m        0.2092        43.0549
+8016.3s	362	      6              1.0040        [32m0.2099[0m        0.2085        43.0499
+8059.4s	363	      7              1.0040        [32m0.2090[0m        0.2085        43.0676
+8102.5s	364	      8              1.0040        [32m0.2082[0m        0.2102        43.1078
+8145.6s	365	A checkpoint was triggered in epoch 10.
+8145.6s	366	      9              1.0040        [32m0.2076[0m        [35m0.2081[0m     +  43.0812
+8188.9s	367	A checkpoint was triggered in epoch 11.
+8188.9s	368	     10              1.0040        [32m0.2069[0m        [35m0.2063[0m     +  43.2600
+8232.0s	369	     11              1.0040        [32m0.2062[0m        0.2066        43.1641
+8275.1s	370	     12              1.0040        [32m0.2055[0m        0.2087        43.0455
+8318.1s	371	     13              1.0040        [32m0.2049[0m        0.2080        43.0004
+8361.1s	372	     14              1.0040        [32m0.2041[0m        0.2088        42.9660
+8404.2s	373	     15              1.0040        [32m0.2033[0m        0.2084        43.1497
+8447.3s	374	     16              1.0040        [32m0.2023[0m        0.2098        43.0560
+8490.4s	375	     17              1.0040        [32m0.2015[0m        0.2144        43.1479
+8533.8s	376	     18              1.0040        [32m0.2004[0m        0.2111        43.3603
+8577.0s	377	     19              1.0040        [32m0.1995[0m        0.2106        43.2140
+8620.2s	378	     20              1.0040        [32m0.1985[0m        0.2119        43.1770
+8663.5s	379	     21              1.0040        [32m0.1973[0m        0.2121        43.2388
+8706.7s	380	     22              1.0040        [32m0.1965[0m        0.2148        43.2800
+8750.3s	381	     23              1.0040        [32m0.1952[0m        0.2165        43.5241
+8793.6s	382	     24              1.0040        [32m0.1943[0m        0.2142        43.2985
+8836.8s	383	     25              1.0040        [32m0.1931[0m        0.2144        43.1855
+8879.9s	384	train end
+8879.9s	385	Loading best checkpoint after training.
+8879.9s	386	removing ./rtdl_checkpoints/134916059928608params.pt
+8890.9s	387	Fold 8 RMSE: 8.59245
+8891.1s	388	
+8891.1s	389	--- Fold 9/10 ---
+8891.9s	390	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+8891.9s	391	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+8894.3s	392	RTDL regressor
+8895.2s	393	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab4ab9693d0>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab4ab96a8d0>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d210a0>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d207d0>)]
+8895.2s	394	Initializing UniquePrefixCheckpoint
+8895.2s	395	fn_prefix is 134916059836256
+8895.6s	396	self.category_embeddings.weight.shape=torch.Size([1517, 192])
+8939.0s	397	A checkpoint was triggered in epoch 2.
+8939.0s	398	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+8939.0s	399	-------  ------------------  ------------  ------------  ----  -------
+8939.0s	400	      1              [36m0.9999[0m        [32m0.2256[0m        [35m0.2178[0m     +  43.3811
+8982.3s	401	A checkpoint was triggered in epoch 3.
+8982.3s	402	      2              0.9999        [32m0.2155[0m        [35m0.2109[0m     +  43.2362
+9025.4s	403	      3              0.9999        [32m0.2132[0m        0.2112        43.1321
+9068.6s	404	A checkpoint was triggered in epoch 5.
+9068.6s	405	      4              0.9999        [32m0.2117[0m        [35m0.2097[0m     +  43.1617
+9111.8s	406	      5              0.9999        [32m0.2105[0m        0.2116        43.2524
+9155.0s	407	      6              0.9999        [32m0.2097[0m        0.2099        43.1595
+9198.2s	408	A checkpoint was triggered in epoch 8.
+9198.2s	409	      7              0.9999        [32m0.2087[0m        [35m0.2089[0m     +  43.1668
+9241.4s	410	      8              0.9999        [32m0.2081[0m        0.2089        43.2057
+9284.5s	411	A checkpoint was triggered in epoch 10.
+9284.5s	412	      9              0.9999        [32m0.2074[0m        [35m0.2087[0m     +  43.1109
+9327.6s	413	A checkpoint was triggered in epoch 11.
+9327.6s	414	     10              0.9999        [32m0.2068[0m        [35m0.2084[0m     +  43.0844
+9370.7s	415	     11              0.9999        [32m0.2061[0m        0.2089        43.0875
+9414.0s	416	     12              0.9999        [32m0.2053[0m        0.2091        43.2970
+9457.3s	417	     13              0.9999        [32m0.2046[0m        0.2100        43.2460
+9500.7s	418	     14              0.9999        [32m0.2038[0m        0.2116        43.4004
+9544.0s	419	     15              0.9999        [32m0.2030[0m        0.2105        43.3108
+9587.2s	420	     16              0.9999        [32m0.2023[0m        0.2108        43.2407
+9630.6s	421	     17              0.9999        [32m0.2014[0m        0.2125        43.3869
+9674.1s	422	     18              0.9999        [32m0.2005[0m        0.2127        43.4406
+9717.6s	423	     19              0.9999        [32m0.1997[0m        0.2129        43.5582
+9761.4s	424	     20              0.9999        [32m0.1985[0m        0.2134        43.7919
+9805.1s	425	     21              0.9999        [32m0.1975[0m        0.2135        43.6654
+9848.6s	426	     22              0.9999        [32m0.1964[0m        0.2166        43.5252
+9892.2s	427	     23              0.9999        [32m0.1954[0m        0.2156        43.5239
+9935.6s	428	     24              0.9999        [32m0.1942[0m        0.2181        43.3817
+9979.0s	429	     25              0.9999        [32m0.1932[0m        0.2169        43.4373
+10022.1s	430	train end
+10022.1s	431	Loading best checkpoint after training.
+10022.1s	432	removing ./rtdl_checkpoints/134916059836256params.pt
+10033.3s	433	Fold 9 RMSE: 8.63485
+10033.5s	434	
+10033.5s	435	--- Fold 10/10 ---
+10034.4s	436	Columns classified as continuous: ['_study_hours_sin', '_class_attendance_sin', 'log_study_hours', 'study_hours_sq', 'log_class_attendance', 'class_attendance_sq', 'log_sleep_hours', 'sleep_hours_sq', 'feature_formula']
+10034.4s	437	Columns classified as categorical: ['age', 'gender', 'course', 'study_hours', 'class_attendance', 'internet_access', 'sleep_hours', 'sleep_quality', 'study_method', 'facility_rating', 'exam_difficulty']
+10036.9s	438	RTDL regressor
+10037.9s	439	[('epoch_timer', <skorch.callbacks.logging.EpochTimer object at 0x7ab497d12450>), ('train_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d12840>), ('valid_loss', <skorch.callbacks.scoring.PassthroughScoring object at 0x7ab497d12960>), ('print_log', <skorch.callbacks.logging.PrintLog object at 0x7ab497d1dfd0>)]
+10037.9s	440	Initializing UniquePrefixCheckpoint
+10037.9s	441	fn_prefix is 134920750400960
+10038.2s	442	self.category_embeddings.weight.shape=torch.Size([1513, 192])
+10082.2s	443	A checkpoint was triggered in epoch 2.
+10082.2s	444	  epoch    constant_val_mse    train_loss    valid_loss    cp      dur
+10082.2s	445	-------  ------------------  ------------  ------------  ----  -------
+10082.2s	446	      1              [36m1.0061[0m        [32m0.2271[0m        [35m0.2136[0m     +  43.9452
+10125.6s	447	      2              1.0061        [32m0.2154[0m        0.2150        43.4118
+10169.2s	448	A checkpoint was triggered in epoch 4.
+10169.2s	449	      3              1.0061        [32m0.2130[0m        [35m0.2109[0m     +  43.5526
+10212.8s	450	A checkpoint was triggered in epoch 5.
+10212.8s	451	      4              1.0061        [32m0.2113[0m        [35m0.2106[0m     +  43.6122
+10256.3s	452	A checkpoint was triggered in epoch 6.
+10256.3s	453	      5              1.0061        [32m0.2104[0m        [35m0.2104[0m     +  43.4697
+10299.7s	454	A checkpoint was triggered in epoch 7.
+10299.7s	455	      6              1.0061        [32m0.2091[0m        [35m0.2101[0m     +  43.3064
+10343.3s	456	A checkpoint was triggered in epoch 8.
+10343.3s	457	      7              1.0061        [32m0.2086[0m        [35m0.2093[0m     +  43.6124
+10386.8s	458	      8              1.0061        [32m0.2079[0m        0.2098        43.4631
+10430.3s	459	      9              1.0061        [32m0.2070[0m        0.2117        43.5121
+10473.9s	460	     10              1.0061        [32m0.2063[0m        0.2109        43.6581
+10517.4s	461	     11              1.0061        [32m0.2056[0m        0.2109        43.4493
+10560.9s	462	     12              1.0061        [32m0.2048[0m        0.2117        43.5432
+10604.2s	463	     13              1.0061        [32m0.2042[0m        0.2122        43.2796
+10647.7s	464	     14              1.0061        [32m0.2032[0m        0.2118        43.4844
+10691.2s	465	     15              1.0061        [32m0.2025[0m        0.2128        43.4232
+10734.6s	466	     16              1.0061        [32m0.2016[0m        0.2149        43.4912
+10778.0s	467	     17              1.0061        [32m0.2008[0m        0.2124        43.3820
+10821.5s	468	     18              1.0061        [32m0.1998[0m        0.2136        43.4646
+10864.8s	469	     19              1.0061        [32m0.1989[0m        0.2142        43.2449
+10908.2s	470	     20              1.0061        [32m0.1979[0m        0.2145        43.4400
+10951.7s	471	     21              1.0061        [32m0.1968[0m        0.2162        43.5154
+10995.2s	472	     22              1.0061        [32m0.1958[0m        0.2161        43.4676
+11038.6s	473	train end
+11038.6s	474	Loading best checkpoint after training.
+11038.6s	475	removing ./rtdl_checkpoints/134920750400960params.pt
+11049.7s	476	Fold 10 RMSE: 8.65461
+11049.9s	477	
+11049.9s	478	======================================================================
+11049.9s	479	V27 FT-TRANSFORMER RESULTS
+11049.9s	480	======================================================================
+11049.9s	481	Average Fold RMSE: 8.63028
+11049.9s	482	OOF RMSE:          8.63032
+11049.9s	483	V25 TabM:          8.60407
+11049.9s	484	Delta vs V25:      +0.02625
+11051.5s	485	
+11051.5s	486	Saved: oof_v27_ftt.csv, submission_v27_ftt.csv
+11051.5s	487	
+11051.5s	488	======================================================================
+11051.5s	489	V27 COMPLETE - FT-Transformer
+11051.5s	490	======================================================================
