@@ -170,10 +170,3 @@ This dataset is a publicly available dataset provided for educational and demons
 | Region | String | Geographical region (East, South, North, West, Central) |
 | Irrigation_Need | String | Target variable: Irrigation requirement level (Low, Medium, High) |
 
-### 📁 Kaggle Data Locations
-```python
-# Raw data
-train = pd.read_csv('/kaggle/input/datasets/blamerx/oof-and-submission/S6E4/Dataset/train.csv')
-test = pd.read_csv('/kaggle/input/datasets/blamerx/oof-and-submission/S6E4/Dataset/test.csv')
-orig = pd.read_csv('/kaggle/input/datasets/blamerx/oof-and-submission/S6E4/Dataset/irrigation_prediction.csv')
-```

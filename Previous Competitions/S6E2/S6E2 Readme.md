@@ -118,10 +118,3 @@ This dataset contains real-world clinical attributes used to analyze and predict
 - Dataset is ready for Logistic Regression, Tree-based models, and Ensembles.
 
 
-### 📁 Kaggle Data Locations
-```python
-# Raw data
-train = pd.read_csv('/kaggle/input/playground-series-s6e2/train.csv')
-test = pd.read_csv('/kaggle/input/playground-series-s6e2/test.csv')
-orig = pd.read_csv('/kaggle/input/heartdisease/Heart_Disease_Prediction.csv')
-```

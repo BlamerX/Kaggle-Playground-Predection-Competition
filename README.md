@@ -8,17 +8,17 @@ Here's a breakdown of the competitions included in this repository:
 
 ---
 
-### Playground Series - Season 6, Episode 8: Predicting Smartphone Addiction
+### Playground Series - Season 6, Episode 9: Predicting Electric Vehicle Interest
 
 <table>
   <tr>
     <td style="width: 40%; vertical-align: top;">
-      <img src="https://www.kaggle.com/competitions/125218/images/header" alt="Predicting Smartphone Addiction Header" width="100%">
+      <img src="https://www.kaggle.com/competitions/125219/images/header" alt="Predicting Electric Vehicle Interest Header" width="100%">
     </td>
     <td style="width: 60%; vertical-align: top; padding-left: 20px;">
-      <strong>Goal:</strong> Predict whether a user is addicted to their smartphone.
+      <strong>Goal:</strong> Predict whether a potential buyer will purchase an electric vehicle.
       <br><br>
-      <strong>Description:</strong> The goal of this competition is to predict the probability of smartphone addiction using a synthetic dataset inspired by the Smartphone Addiction Prediction Dataset.
+      <strong>Description:</strong> The goal of this competition is to predict the probability that a customer will buy an EV using a synthetic dataset inspired by the EV Adoption and Range Anxiety dataset.
     </td>
   </tr>
 </table>

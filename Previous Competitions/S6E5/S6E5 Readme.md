@@ -143,10 +143,3 @@ The dataset is built using FastF1 and includes custom feature engineering such a
 | Position_Change | Float | Change in position |
 | PitNextLap | Integer | **Target variable**: Predict whether a driver will pit next lap |
 
-### 📁 Kaggle Data Locations
-```python
-# Raw data
-train = pd.read_csv('/kaggle/input/datasets/blamerx/oof-and-submission/S6E5/Dataset/train.csv')
-test = pd.read_csv('/kaggle/input/datasets/blamerx/oof-and-submission/S6E5/Dataset/test.csv')
-orig = pd.read_csv('/kaggle/input/datasets/blamerx/oof-and-submission/S6E5/Dataset/f1_strategy_dataset_v4.csv')
-```

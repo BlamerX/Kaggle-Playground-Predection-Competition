@@ -158,10 +158,3 @@ This dataset is a publicly available sample dataset provided by IBM Analytics fo
 | TotalCharges | Float | The total amount charged to the customer |
 | Churn | String | Target variable: Whether the customer churned or not (Yes, No) |
 
-### 📁 Kaggle Data Locations
-```python
-# Raw data
-train = pd.read_csv('/kaggle/input/competitions/playground-series-s6e3/train.csv')
-test = pd.read_csv('/kaggle/input/competitions/playground-series-s6e3/test.csv')
-orig = pd.read_csv('/kaggle/input/datasets/blastchar/telco-customer-churn/WA_Fn-UseC_-Telco-Customer-Churn.csv')
-```

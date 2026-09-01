@@ -118,13 +118,6 @@ This dataset provides the foundational data used for the synthetic generation. I
 | exam_difficulty | Ordinal | Easy, Moderate, Hard |
 | exam_score | Continuous | 0 - 100 |
 
-### 📁 Kaggle Data Locations
-```python
-# Raw data
-train = pd.read_csv('/kaggle/input/playground-series-s6e1/train.csv')
-test = pd.read_csv('/kaggle/input/playground-series-s6e1/test.csv')
-orig = pd.read_csv('/kaggle/input/exam-score-prediction-dataset/Exam_Score_Prediction.csv')
-```
 
 ## Citation
 
